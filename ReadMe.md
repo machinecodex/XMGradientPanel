@@ -6,20 +6,31 @@ A drop in Gradient Panel for Mac OS X
 Introduction
 ----------------
 
+Cocoa has offered the very useful NSGradient class since Leopard, but we still have no standard way to present a picker UI so users can choose a gradient in a standard way, analagous to NSColorPanel and NSColorWell.
+Our aim is to fill this gap with a standard, open-source set of controls to fill this role.
+Please feel free to fork or contribute!
 
 Setup
 --------
 
+At present, XMGradientPanel falls a little short of the "drop-in" goal, due to XMGradientPicker being a subclass of KTGradientPicker. You will first need to download and include KTUIKit in your project.
+
 Usage
 ---------
 
+The aim is to make a flexible panel that can support multiple picker views. There is some serious refactoring necessary before this can become a reality. At present, there is a single picker, which uses simple target-action methods to set values. 
+XMGradientPanel stores a set of preset gradients as a file in the Application Support folder.
+Please refer to the extremely simple example project for more information.
+
 Example Project
 -----------------------
+A simple example project is included.
 
 Status
 --------
 
 XMGradientPanel should be considered an alpha project.
+The first main task that needs completing is a rewrite of XMGradientPicker to remove the dependencies upon KTUIKit.
 
 Copyright and License
 -------------------------------
