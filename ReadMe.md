@@ -12,30 +12,25 @@ Our goal is to fill this gap with a standard, open-source set of control views, 
 
 The eventual aim is to make a flexible panel that can support multiple picker views. There is some serious refactoring necessary before this can become a reality. At present, there is a single picker, which uses simple target-action methods to set values. 
 
-`XMGradientPanel` stores a set of preset gradients as a file in the Application Support folder.
+XMGradientPanel also stores a set of preset gradients as a file in the Application Support folder.
 
 Please feel free to contribute!
 
 Setup
 -----
 
-Simply add the `XMUIKit` classes to your project.
+Simply add the XMUIKit classes to your project.
 
 Usage
 -----
 
-You can configure an `XMGradientPanel` very simply by adding an `XMGradientWell` to your interface in IB and making an outlet in your controller class.
+You can configure an XMGradientPanel very simply by adding an `XMGradientWell` custom view to your interface in IB and connecting it to an outlet in your controller class.
 
-Then, to configure the well, you would add the following code to `awakeFromNib`:
+Then, to configure the gradient well, you might add the following code to `awakeFromNib` or `applicationDidFinishLaunching:`:
 
-    - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-
-        [gradientWell setGradient:[NSGradient inverseGlossyGradient]];
-
-        [gradientWell setTarget:self];
-        [gradientWell setAction:@selector(setGradient:)];
-
-    }
+    [gradientWell setGradient:someGradient];
+    [gradientWell setTarget:self];
+    [gradientWell setAction:@selector(setGradient:)];
 
 To set a gradient value, you would implement the selector action like this:
 
@@ -45,7 +40,7 @@ To set a gradient value, you would implement the selector action like this:
         [gradientView display];
     }
 
-Please refer to the example project for more information on how to use `XMGradientPanel` in your app.
+Please refer to the example project for more information on how to use XMGradientPanel in your app.
 
 Example Project
 ---------------
