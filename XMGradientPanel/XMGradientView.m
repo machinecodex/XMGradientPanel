@@ -7,7 +7,6 @@
 //
 
 #import "XMGradientView.h"
-#import "XMThemeUtilities.h"
 #import "NSGradient+XMGradients.h"
 
 
@@ -34,12 +33,12 @@
 {	
 	if ((self = [super initWithFrame:frameRect])) 
 	{
-		[self setDoesDrawOutline:NO];
-		[self setDoesDrawTopBorder:YES];
-		[self setDoesDrawBottomBorder:YES];
+		[self setDoesDrawOutline:YES];
+		[self setDoesDrawTopBorder:NO];
+		[self setDoesDrawBottomBorder:NO];
 
-		self.topBorderColor = [NSColor colorWithCalibratedWhite:0.85 alpha:1.0];
-		self.bottomBorderColor = [NSColor colorWithCalibratedWhite:0.75 alpha:1.0];
+		self.outlineColor = [NSColor colorWithCalibratedWhite:0.85 alpha:1.0];
+
 		self.gradient = [NSGradient inverseGlossyGradient];
 		
 		return self;
@@ -121,6 +120,3 @@
 }
 
 @end
-
-
-

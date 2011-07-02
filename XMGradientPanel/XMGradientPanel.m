@@ -10,9 +10,11 @@
 #import "NSGradient+XMGradients.h"
 #import "XMGradientPicker.h"
 #import "XMGradientWell.h"
-#import "XMDefines.h"
+//#import "XMDefines.h"
 
 static XMGradientPanel *sharedGradientPanel = nil;
+
+#define XMGradientPanelGradientChangedNotification @"XMGradientPanelGradientChangedNotification"
 
 @implementation XMGradientPanel
 
@@ -120,7 +122,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
     [_picker setTarget:self];
     [_picker setAction:@selector(takeValueFromPicker:)];
     
-    _picker.gradient = self.gradient;
+    _picker.gradientValue = self.gradient;
     
     [self setupSwatch];
     [self setupSwatchWellsInView:self.swatchWellsView];
@@ -199,7 +201,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
 
 - (NSGradient *) gradient
 {
-    return [_picker gradient];
+    return [_picker gradientValue];
 }
 
 - (void) setGradient: (NSGradient *)aGradient {
@@ -211,7 +213,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
         _gradient = aGradient;
     }
         
-    [_picker setGradient:aGradient];
+    [_picker setGradientValue:aGradient];
     [swatch setGradient:self.gradient];
     
     if (_isContinuous && (_action) && (_target != nil))

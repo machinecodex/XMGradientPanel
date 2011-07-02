@@ -7,14 +7,27 @@
 //
 
 #import "XMGradientPanelAppDelegate.h"
+#import "NSGradient+XMGradients.h"
+
+#import "XMGradientView.h"
+#import "XMGradientWell.h"
 
 @implementation XMGradientPanelAppDelegate
 
 @synthesize window = _window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
+
+    [gradientWell setGradient:[NSGradient inverseGlossyGradient]];
+    
+    [gradientWell setTarget:self];
+    [gradientWell setAction:@selector(setGradient:)];
+}
+
+- (IBAction) setGradient:(id)sender {
+    
+    [gradientView setGradient:[sender gradient]];
+    [gradientView display];
 }
 
 @end

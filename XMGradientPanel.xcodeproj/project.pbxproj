@@ -16,51 +16,19 @@
 		FA75296013BEEB3B0051A48F /* XMGradientPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75295913BEEB3B0051A48F /* XMGradientPicker.m */; };
 		FA75296113BEEB3B0051A48F /* XMGradientWell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75295B13BEEB3B0051A48F /* XMGradientWell.m */; };
 		FA75296213BEEB3B0051A48F /* XMGradientPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75295D13BEEB3B0051A48F /* XMGradientPanel.m */; };
-		FA75296313BEEB3B0051A48F /* XMGradientPanel_Example.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75295F13BEEB3B0051A48F /* XMGradientPanel_Example.m */; };
-		FA7529C913BEECB90051A48F /* KTLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75296813BEECB90051A48F /* KTLayerController.m */; };
-		FA7529CA13BEECB90051A48F /* KTTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75296A13BEECB90051A48F /* KTTabItem.m */; };
-		FA7529CB13BEECB90051A48F /* KTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75296C13BEECB90051A48F /* KTTabViewController.m */; };
-		FA7529CC13BEECB90051A48F /* KTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75296E13BEECB90051A48F /* KTViewController.m */; };
-		FA7529CD13BEECB90051A48F /* KTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75297013BEECB90051A48F /* KTWindowController.m */; };
-		FA7529CE13BEECB90051A48F /* KTAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75297213BEECB90051A48F /* KTAnimator.m */; };
-		FA7529CF13BEECB90051A48F /* KTLayoutDynamicImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75297413BEECB90051A48F /* KTLayoutDynamicImplementation.m */; };
 		FA7529D013BEECB90051A48F /* KTUIKitFramework-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA75297713BEECB90051A48F /* KTUIKitFramework-Info.plist */; };
-		FA7529D113BEECB90051A48F /* NSBezierPathAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75297B13BEECB90051A48F /* NSBezierPathAdditions.m */; };
-		FA7529D213BEECB90051A48F /* KTLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75297F13BEECB90051A48F /* KTLayoutManager.m */; };
-		FA7529D313BEECB90051A48F /* KTViewLayoutSharedImplementation_ChildlessNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298213BEECB90051A48F /* KTViewLayoutSharedImplementation_ChildlessNSView.m */; };
 		FA7529D413BEECB90051A48F /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA75298313BEECB90051A48F /* readme.txt */; };
-		FA7529D513BEECB90051A48F /* KTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298613BEECB90051A48F /* KTButton.m */; };
-		FA7529D613BEECB90051A48F /* KTColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298813BEECB90051A48F /* KTColorWell.m */; };
-		FA7529D713BEECB90051A48F /* KTControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298A13BEECB90051A48F /* KTControl.m */; };
-		FA7529D813BEECB90051A48F /* KTGradientPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298C13BEECB90051A48F /* KTGradientPicker.m */; };
-		FA7529D913BEECB90051A48F /* KTImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298E13BEECB90051A48F /* KTImageView.m */; };
-		FA7529DA13BEECB90051A48F /* KTPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299013BEECB90051A48F /* KTPopUpButton.m */; };
-		FA7529DB13BEECB90051A48F /* KTSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299213BEECB90051A48F /* KTSearchField.m */; };
-		FA7529DC13BEECB90051A48F /* KTSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299413BEECB90051A48F /* KTSecureTextField.m */; };
-		FA7529DD13BEECB90051A48F /* KTSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299613BEECB90051A48F /* KTSegmentedControl.m */; };
-		FA7529DE13BEECB90051A48F /* KTSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299813BEECB90051A48F /* KTSlider.m */; };
-		FA7529DF13BEECB90051A48F /* KTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299A13BEECB90051A48F /* KTTextField.m */; };
-		FA7529E013BEECB90051A48F /* KTViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299C13BEECB90051A48F /* KTViewControl.m */; };
-		FA7529E113BEECB90051A48F /* KTAppKitSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299F13BEECB90051A48F /* KTAppKitSplitView.m */; };
-		FA7529E213BEECB90051A48F /* KTImageKitBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529A113BEECB90051A48F /* KTImageKitBrowserView.m */; };
-		FA7529E313BEECB90051A48F /* KTLevelIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529A313BEECB90051A48F /* KTLevelIndicator.m */; };
-		FA7529E413BEECB90051A48F /* KTProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529A513BEECB90051A48F /* KTProgressIndicator.m */; };
-		FA7529E513BEECB90051A48F /* KTScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529A713BEECB90051A48F /* KTScroller.m */; };
-		FA7529E613BEECB90051A48F /* KTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529A913BEECB90051A48F /* KTScrollView.m */; };
-		FA7529E713BEECB90051A48F /* KTView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529AB13BEECB90051A48F /* KTView.m */; };
-		FA7529E813BEECB90051A48F /* KTWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529AD13BEECB90051A48F /* KTWebView.m */; };
-		FA7529E913BEECB90051A48F /* KTSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529B013BEECB90051A48F /* KTSplitView.m */; };
-		FA7529EA13BEECB90051A48F /* KTSplitViewDivider.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529B213BEECB90051A48F /* KTSplitViewDivider.m */; };
-		FA7529EB13BEECB90051A48F /* KTViewOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529B513BEECB90051A48F /* KTViewOverlayWindow.m */; };
-		FA7529EC13BEECB90051A48F /* KTWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529B713BEECB90051A48F /* KTWindow.m */; };
-		FA7529ED13BEECB90051A48F /* KTOpenGLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529BA13BEECB90051A48F /* KTOpenGLButton.m */; };
-		FA7529EE13BEECB90051A48F /* KTOpenGLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529BC13BEECB90051A48F /* KTOpenGLControl.m */; };
-		FA7529EF13BEECB90051A48F /* KTOpenGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529BE13BEECB90051A48F /* KTOpenGLLayer.m */; };
-		FA7529F013BEECB90051A48F /* KTOpenGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C013BEECB90051A48F /* KTOpenGLTexture.m */; };
-		FA7529F113BEECB90051A48F /* KTOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C213BEECB90051A48F /* KTOpenGLView.m */; };
-		FA7529F213BEECB90051A48F /* KTSharedContextOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C413BEECB90051A48F /* KTSharedContextOpenGLView.m */; };
-		FA7529F313BEECB90051A48F /* KTStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C813BEECB90051A48F /* KTStyleManager.m */; };
 		FA7529F813BEEDEA0051A48F /* NSGradient+XMGradients.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */; };
+		FA7529FA13BF00080051A48F /* GradientPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7529F913BF00080051A48F /* GradientPanel.xib */; };
+		FA7529FD13BF00A10051A48F /* XMGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529FC13BF00A10051A48F /* XMGradientView.m */; };
+		FA752A0013BF056D0051A48F /* XMApplicationSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529FF13BF056D0051A48F /* XMApplicationSupport.m */; };
+		FA752A0113BF06DC0051A48F /* KTGradientPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298C13BEECB90051A48F /* KTGradientPicker.m */; };
+		FA752A0313BF07B60051A48F /* KTLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75297F13BEECB90051A48F /* KTLayoutManager.m */; };
+		FA752A0613BF07B60051A48F /* KTColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75298813BEECB90051A48F /* KTColorWell.m */; };
+		FA752A0813BF07B60051A48F /* KTViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75299C13BEECB90051A48F /* KTViewControl.m */; };
+		FA752A0A13BF07B60051A48F /* KTView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529AB13BEECB90051A48F /* KTView.m */; };
+		FA752A0D13BF07B60051A48F /* KTStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C813BEECB90051A48F /* KTStyleManager.m */; };
+		FA752A0F13BF0E070051A48F /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = FA752A0E13BF0E070051A48F /* ReadMe.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +51,6 @@
 		FA75295B13BEEB3B0051A48F /* XMGradientWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientWell.m; sourceTree = "<group>"; };
 		FA75295C13BEEB3B0051A48F /* XMGradientPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGradientPanel.h; sourceTree = "<group>"; };
 		FA75295D13BEEB3B0051A48F /* XMGradientPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientPanel.m; sourceTree = "<group>"; };
-		FA75295E13BEEB3B0051A48F /* XMGradientPanel_Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGradientPanel_Example.h; sourceTree = "<group>"; };
-		FA75295F13BEEB3B0051A48F /* XMGradientPanel_Example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientPanel_Example.m; sourceTree = "<group>"; };
 		FA75296613BEECB90051A48F /* KTController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTController.h; sourceTree = "<group>"; };
 		FA75296713BEECB90051A48F /* KTLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLayerController.h; sourceTree = "<group>"; };
 		FA75296813BEECB90051A48F /* KTLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLayerController.m; sourceTree = "<group>"; };
@@ -175,6 +141,12 @@
 		FA7529C813BEECB90051A48F /* KTStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTStyleManager.m; sourceTree = "<group>"; };
 		FA7529F613BEEDEA0051A48F /* NSGradient+XMGradients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGradient+XMGradients.h"; sourceTree = "<group>"; };
 		FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSGradient+XMGradients.m"; sourceTree = "<group>"; };
+		FA7529F913BF00080051A48F /* GradientPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradientPanel.xib; sourceTree = "<group>"; };
+		FA7529FB13BF00A10051A48F /* XMGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGradientView.h; sourceTree = "<group>"; };
+		FA7529FC13BF00A10051A48F /* XMGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientView.m; sourceTree = "<group>"; };
+		FA7529FE13BF056D0051A48F /* XMApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMApplicationSupport.h; sourceTree = "<group>"; };
+		FA7529FF13BF056D0051A48F /* XMApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMApplicationSupport.m; sourceTree = "<group>"; };
+		FA752A0E13BF0E070051A48F /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,11 +201,8 @@
 		FA75294013BED6460051A48F /* XMGradientPanel */ = {
 			isa = PBXGroup;
 			children = (
-				FA75296413BEECB90051A48F /* KTUIKit */,
-				FA75295713BED6590051A48F /* Classes */,
-				FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */,
-				FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */,
-				FA75294F13BED6460051A48F /* MainMenu.xib */,
+				FA752A0E13BF0E070051A48F /* ReadMe.md */,
+				FA75295713BED6590051A48F /* Demo App */,
 				FA7529F413BEED080051A48F /* XMUIKit */,
 				FA7529F513BEEDCB0051A48F /* Extensions */,
 			);
@@ -253,11 +222,18 @@
 			path = XMGradientPanel;
 			sourceTree = "<group>";
 		};
-		FA75295713BED6590051A48F /* Classes */ = {
+		FA75295713BED6590051A48F /* Demo App */ = {
 			isa = PBXGroup;
 			children = (
+				FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */,
+				FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */,
+				FA7529FB13BF00A10051A48F /* XMGradientView.h */,
+				FA7529FC13BF00A10051A48F /* XMGradientView.m */,
+				FA7529FE13BF056D0051A48F /* XMApplicationSupport.h */,
+				FA7529FF13BF056D0051A48F /* XMApplicationSupport.m */,
+				FA75294F13BED6460051A48F /* MainMenu.xib */,
 			);
-			name = Classes;
+			name = "Demo App";
 			sourceTree = "<group>";
 		};
 		FA75296413BEECB90051A48F /* KTUIKit */ = {
@@ -455,14 +431,14 @@
 		FA7529F413BEED080051A48F /* XMUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				FA75295813BEEB3B0051A48F /* XMGradientPicker.h */,
-				FA75295913BEEB3B0051A48F /* XMGradientPicker.m */,
-				FA75295A13BEEB3B0051A48F /* XMGradientWell.h */,
-				FA75295B13BEEB3B0051A48F /* XMGradientWell.m */,
+				FA7529F913BF00080051A48F /* GradientPanel.xib */,
 				FA75295C13BEEB3B0051A48F /* XMGradientPanel.h */,
 				FA75295D13BEEB3B0051A48F /* XMGradientPanel.m */,
-				FA75295E13BEEB3B0051A48F /* XMGradientPanel_Example.h */,
-				FA75295F13BEEB3B0051A48F /* XMGradientPanel_Example.m */,
+				FA75295A13BEEB3B0051A48F /* XMGradientWell.h */,
+				FA75295B13BEEB3B0051A48F /* XMGradientWell.m */,
+				FA75295813BEEB3B0051A48F /* XMGradientPicker.h */,
+				FA75295913BEEB3B0051A48F /* XMGradientPicker.m */,
+				FA75296413BEECB90051A48F /* KTUIKit */,
 			);
 			name = XMUIKit;
 			sourceTree = "<group>";
@@ -531,6 +507,8 @@
 				FA75295113BED6460051A48F /* MainMenu.xib in Resources */,
 				FA7529D013BEECB90051A48F /* KTUIKitFramework-Info.plist in Resources */,
 				FA7529D413BEECB90051A48F /* readme.txt in Resources */,
+				FA7529FA13BF00080051A48F /* GradientPanel.xib in Resources */,
+				FA752A0F13BF0E070051A48F /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,54 +519,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA752A0313BF07B60051A48F /* KTLayoutManager.m in Sources */,
+				FA752A0613BF07B60051A48F /* KTColorWell.m in Sources */,
+				FA752A0813BF07B60051A48F /* KTViewControl.m in Sources */,
+				FA752A0A13BF07B60051A48F /* KTView.m in Sources */,
+				FA752A0D13BF07B60051A48F /* KTStyleManager.m in Sources */,
+				FA752A0113BF06DC0051A48F /* KTGradientPicker.m in Sources */,
 				FA75294713BED6460051A48F /* main.m in Sources */,
 				FA75294E13BED6460051A48F /* XMGradientPanelAppDelegate.m in Sources */,
 				FA75296013BEEB3B0051A48F /* XMGradientPicker.m in Sources */,
 				FA75296113BEEB3B0051A48F /* XMGradientWell.m in Sources */,
 				FA75296213BEEB3B0051A48F /* XMGradientPanel.m in Sources */,
-				FA75296313BEEB3B0051A48F /* XMGradientPanel_Example.m in Sources */,
-				FA7529C913BEECB90051A48F /* KTLayerController.m in Sources */,
-				FA7529CA13BEECB90051A48F /* KTTabItem.m in Sources */,
-				FA7529CB13BEECB90051A48F /* KTTabViewController.m in Sources */,
-				FA7529CC13BEECB90051A48F /* KTViewController.m in Sources */,
-				FA7529CD13BEECB90051A48F /* KTWindowController.m in Sources */,
-				FA7529CE13BEECB90051A48F /* KTAnimator.m in Sources */,
-				FA7529CF13BEECB90051A48F /* KTLayoutDynamicImplementation.m in Sources */,
-				FA7529D113BEECB90051A48F /* NSBezierPathAdditions.m in Sources */,
-				FA7529D213BEECB90051A48F /* KTLayoutManager.m in Sources */,
-				FA7529D313BEECB90051A48F /* KTViewLayoutSharedImplementation_ChildlessNSView.m in Sources */,
-				FA7529D513BEECB90051A48F /* KTButton.m in Sources */,
-				FA7529D613BEECB90051A48F /* KTColorWell.m in Sources */,
-				FA7529D713BEECB90051A48F /* KTControl.m in Sources */,
-				FA7529D813BEECB90051A48F /* KTGradientPicker.m in Sources */,
-				FA7529D913BEECB90051A48F /* KTImageView.m in Sources */,
-				FA7529DA13BEECB90051A48F /* KTPopUpButton.m in Sources */,
-				FA7529DB13BEECB90051A48F /* KTSearchField.m in Sources */,
-				FA7529DC13BEECB90051A48F /* KTSecureTextField.m in Sources */,
-				FA7529DD13BEECB90051A48F /* KTSegmentedControl.m in Sources */,
-				FA7529DE13BEECB90051A48F /* KTSlider.m in Sources */,
-				FA7529DF13BEECB90051A48F /* KTTextField.m in Sources */,
-				FA7529E013BEECB90051A48F /* KTViewControl.m in Sources */,
-				FA7529E113BEECB90051A48F /* KTAppKitSplitView.m in Sources */,
-				FA7529E213BEECB90051A48F /* KTImageKitBrowserView.m in Sources */,
-				FA7529E313BEECB90051A48F /* KTLevelIndicator.m in Sources */,
-				FA7529E413BEECB90051A48F /* KTProgressIndicator.m in Sources */,
-				FA7529E513BEECB90051A48F /* KTScroller.m in Sources */,
-				FA7529E613BEECB90051A48F /* KTScrollView.m in Sources */,
-				FA7529E713BEECB90051A48F /* KTView.m in Sources */,
-				FA7529E813BEECB90051A48F /* KTWebView.m in Sources */,
-				FA7529E913BEECB90051A48F /* KTSplitView.m in Sources */,
-				FA7529EA13BEECB90051A48F /* KTSplitViewDivider.m in Sources */,
-				FA7529EB13BEECB90051A48F /* KTViewOverlayWindow.m in Sources */,
-				FA7529EC13BEECB90051A48F /* KTWindow.m in Sources */,
-				FA7529ED13BEECB90051A48F /* KTOpenGLButton.m in Sources */,
-				FA7529EE13BEECB90051A48F /* KTOpenGLControl.m in Sources */,
-				FA7529EF13BEECB90051A48F /* KTOpenGLLayer.m in Sources */,
-				FA7529F013BEECB90051A48F /* KTOpenGLTexture.m in Sources */,
-				FA7529F113BEECB90051A48F /* KTOpenGLView.m in Sources */,
-				FA7529F213BEECB90051A48F /* KTSharedContextOpenGLView.m in Sources */,
-				FA7529F313BEECB90051A48F /* KTStyleManager.m in Sources */,
 				FA7529F813BEEDEA0051A48F /* NSGradient+XMGradients.m in Sources */,
+				FA7529FD13BF00A10051A48F /* XMGradientView.m in Sources */,
+				FA752A0013BF056D0051A48F /* XMApplicationSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +616,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XMGradientPanel/XMGradientPanel-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "XMGradientPanel/XMGradientPanel-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -683,6 +628,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XMGradientPanel/XMGradientPanel-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "XMGradientPanel/XMGradientPanel-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

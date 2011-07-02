@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "KTGradientPicker.h"
 
-// Simply rotate the drawing code by 90 degrees, so our picker is portrait
+/* Based on KTGradientPicker. We simply rotate the drawing code by 90 degrees, so our picker is
+ portrait orientation, and add a midline.
+ At some point it would be good to make this a standalone class for independence, to use this we need to include a lot of KTUIKit classes as dependencies.
+*/
 
 @interface XMGradientPicker : KTGradientPicker {
     
