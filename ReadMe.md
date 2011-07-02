@@ -3,10 +3,10 @@ XMGradientPanel
 
 A drop-in Gradient Panel for Mac apps that works much like NSColorPanel.
 
+![XMGradientPanel](http://www.machinecodex.com/media/XMGradientPanel.png)
+
 Introduction
 ----------------
-
-![XMGradientPanel](http:www.machinecodex.com/media/XMGradientPanel.png)
 
 Cocoa has offered the very useful `NSGradient` class since Leopard, but we still have no standard way to present a picker UI so users can choose a gradient in a standard way, analagous to `NSColorPanel` and `NSColorWell`.
 
