@@ -60,6 +60,7 @@
 		FA7529F113BEECB90051A48F /* KTOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C213BEECB90051A48F /* KTOpenGLView.m */; };
 		FA7529F213BEECB90051A48F /* KTSharedContextOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C413BEECB90051A48F /* KTSharedContextOpenGLView.m */; };
 		FA7529F313BEECB90051A48F /* KTStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529C813BEECB90051A48F /* KTStyleManager.m */; };
+		FA7529F813BEEDEA0051A48F /* NSGradient+XMGradients.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +173,8 @@
 		FA7529C613BEECB90051A48F /* KTStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTStyle.h; sourceTree = "<group>"; };
 		FA7529C713BEECB90051A48F /* KTStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTStyleManager.h; sourceTree = "<group>"; };
 		FA7529C813BEECB90051A48F /* KTStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTStyleManager.m; sourceTree = "<group>"; };
+		FA7529F613BEEDEA0051A48F /* NSGradient+XMGradients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGradient+XMGradients.h"; sourceTree = "<group>"; };
+		FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSGradient+XMGradients.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				FA75294013BED6460051A48F /* XMGradientPanel */,
-				FA75296413BEECB90051A48F /* KTUIKit */,
 				FA75294113BED6460051A48F /* Supporting Files */,
 				FA75293913BED6460051A48F /* Frameworks */,
 				FA75293713BED6460051A48F /* Products */,
@@ -227,11 +229,13 @@
 		FA75294013BED6460051A48F /* XMGradientPanel */ = {
 			isa = PBXGroup;
 			children = (
+				FA75296413BEECB90051A48F /* KTUIKit */,
 				FA75295713BED6590051A48F /* Classes */,
 				FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */,
 				FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */,
 				FA75294F13BED6460051A48F /* MainMenu.xib */,
 				FA7529F413BEED080051A48F /* XMUIKit */,
+				FA7529F513BEEDCB0051A48F /* Extensions */,
 			);
 			path = XMGradientPanel;
 			sourceTree = "<group>";
@@ -269,7 +273,7 @@
 				FA75297813BEECB90051A48F /* Views */,
 			);
 			name = KTUIKit;
-			path = ../KTUIKit/Framework;
+			path = ../../KTUIKit/Framework;
 			sourceTree = "<group>";
 		};
 		FA75296513BEECB90051A48F /* Controllers */ = {
@@ -463,6 +467,15 @@
 			name = XMUIKit;
 			sourceTree = "<group>";
 		};
+		FA7529F513BEEDCB0051A48F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA7529F613BEEDEA0051A48F /* NSGradient+XMGradients.h */,
+				FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -575,6 +588,7 @@
 				FA7529F113BEECB90051A48F /* KTOpenGLView.m in Sources */,
 				FA7529F213BEECB90051A48F /* KTSharedContextOpenGLView.m in Sources */,
 				FA7529F313BEECB90051A48F /* KTStyleManager.m in Sources */,
+				FA7529F813BEEDEA0051A48F /* NSGradient+XMGradients.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
