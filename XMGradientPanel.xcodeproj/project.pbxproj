@@ -21,12 +21,12 @@
 		FA75293D13BED6460051A48F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		FA75293E13BED6460051A48F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA75293F13BED6460051A48F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FA75294213BED6460051A48F /* XMGradientPanel-Info.plist */ = {isa = PBXFileReference; path = "XMGradientPanel-Info.plist"; sourceTree = "<group>"; };
+		FA75294213BED6460051A48F /* XMGradientPanel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XMGradientPanel-Info.plist"; sourceTree = "<group>"; };
 		FA75294413BED6460051A48F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA75294613BED6460051A48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA75294813BED6460051A48F /* XMGradientPanel-Prefix.pch */ = {isa = PBXFileReference; path = "XMGradientPanel-Prefix.pch"; sourceTree = "<group>"; };
+		FA75294813BED6460051A48F /* XMGradientPanel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XMGradientPanel-Prefix.pch"; sourceTree = "<group>"; };
 		FA75294A13BED6460051A48F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */ = {isa = PBXFileReference; path = XMGradientPanelAppDelegate.h; sourceTree = "<group>"; };
+		FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGradientPanelAppDelegate.h; sourceTree = "<group>"; };
 		FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGradientPanelAppDelegate.m; sourceTree = "<group>"; };
 		FA75295013BED6460051A48F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +82,7 @@
 		FA75294013BED6460051A48F /* XMGradientPanel */ = {
 			isa = PBXGroup;
 			children = (
+				FA75295713BED6590051A48F /* Classes */,
 				FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */,
 				FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */,
 				FA75294F13BED6460051A48F /* MainMenu.xib */,
@@ -100,6 +101,13 @@
 				FA75294913BED6460051A48F /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA75295713BED6590051A48F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
