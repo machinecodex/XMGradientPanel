@@ -6,25 +6,42 @@
 //  Copyright 2011 PowerMax. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "KTGradientPicker.h"
-
-/* Based on KTGradientPicker. We simply rotate the drawing code by 90 degrees, so our picker is
- portrait orientation, and add a midline.
- At some point it would be good to make this a standalone class for independence, to use this we need to include a lot of KTUIKit classes as dependencies.
+/* 
+ 
+ This class is based on KTGradientPicker from KTUIKit.
+ http://code.google.com/p/ktuikit/
+ 
 */
 
-@interface XMGradientPicker : KTGradientPicker {
+
+#import <Foundation/Foundation.h>
+#import "XMViewControl.h"
+
+typedef enum {
+    
+	kKTGradientPickerMouseDragState_NoDrag = 0,
+	kKTGradientPickerMouseDragState_DraggingColorStop
+	
+} KTGradientPickerMouseDragState;
+
+
+@interface XMGradientPicker : XMViewControl {
     
     BOOL _doDrawMidline;
+
+    NSGradient *						_gradientValue;
+	NSInteger							_activeColorStop;
+	BOOL								_removeActiveColorStop;
+	KTGradientPickerMouseDragState		_mouseDragState;
 }
 
+@property(readwrite,retain) NSGradient * gradientValue;
 @property (assign) BOOL doDrawMidline;
 
 @end
 
 @interface XMGradientPicker (Checkerboard)
     
-- (void) drawCheckersInContext:(CGContextRef)theContext;
+- (void) drawCheckerboardInContext:(CGContextRef)theContext;
 
 @end

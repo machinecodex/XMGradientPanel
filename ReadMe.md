@@ -13,13 +13,15 @@ Please feel free to fork or contribute!
 Setup
 --------
 
-At present, XMGradientPanel falls a little short of the "drop-in" goal, due to XMGradientPicker being a subclass of KTGradientPicker. You will first need to download and include KTUIKit in your project.
+Simply add the XMUIKit classes to your project.
 
 Usage
 ---------
 
 The aim is to make a flexible panel that can support multiple picker views. There is some serious refactoring necessary before this can become a reality. At present, there is a single picker, which uses simple target-action methods to set values. 
+
 XMGradientPanel stores a set of preset gradients as a file in the Application Support folder.
+
 Please refer to the extremely simple example project for more information.
 
 Example Project
@@ -30,7 +32,12 @@ Status
 --------
 
 XMGradientPanel should be considered an alpha project.
-The first main task that needs completing is a rewrite of XMGradientPicker to remove the dependencies upon KTUIKit.
+
+Attribution
+-----------
+
+XMGradientPicker is cribbed pretty much verbatim from KTGradientPicker from KTUIKit. Thanks to the KTUIKit developers for the fantastic framework.
+http://code.google.com/p/ktuikit/
 
 Copyright and License
 -------------------------------
