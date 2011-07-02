@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA75293B13BED6460051A48F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA75293A13BED6460051A48F /* Cocoa.framework */; };
+		FA75294513BED6460051A48F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA75294313BED6460051A48F /* InfoPlist.strings */; };
+		FA75294713BED6460051A48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75294613BED6460051A48F /* main.m */; };
+		FA75294B13BED6460051A48F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA75294913BED6460051A48F /* Credits.rtf */; };
+		FA75294E13BED6460051A48F /* XMGradientPanelAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */; };
+		FA75295113BED6460051A48F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA75294F13BED6460051A48F /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA75293613BED6460051A48F /* XMGradientPanel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMGradientPanel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75293A13BED6460051A48F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FA75293D13BED6460051A48F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FA75293E13BED6460051A48F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FA75293F13BED6460051A48F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FA75294213BED6460051A48F /* XMGradientPanel-Info.plist */ = {isa = PBXFileReference; path = "XMGradientPanel-Info.plist"; sourceTree = "<group>"; };
+		FA75294413BED6460051A48F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA75294613BED6460051A48F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA75294813BED6460051A48F /* XMGradientPanel-Prefix.pch */ = {isa = PBXFileReference; path = "XMGradientPanel-Prefix.pch"; sourceTree = "<group>"; };
+		FA75294A13BED6460051A48F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */ = {isa = PBXFileReference; path = XMGradientPanelAppDelegate.h; sourceTree = "<group>"; };
+		FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGradientPanelAppDelegate.m; sourceTree = "<group>"; };
+		FA75295013BED6460051A48F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA75293313BED6460051A48F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA75293B13BED6460051A48F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA75292B13BED6460051A48F = {
+			isa = PBXGroup;
+			children = (
+				FA75294013BED6460051A48F /* XMGradientPanel */,
+				FA75293913BED6460051A48F /* Frameworks */,
+				FA75293713BED6460051A48F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA75293713BED6460051A48F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA75293613BED6460051A48F /* XMGradientPanel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA75293913BED6460051A48F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA75293A13BED6460051A48F /* Cocoa.framework */,
+				FA75293C13BED6460051A48F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA75293C13BED6460051A48F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA75293D13BED6460051A48F /* AppKit.framework */,
+				FA75293E13BED6460051A48F /* CoreData.framework */,
+				FA75293F13BED6460051A48F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FA75294013BED6460051A48F /* XMGradientPanel */ = {
+			isa = PBXGroup;
+			children = (
+				FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */,
+				FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */,
+				FA75294F13BED6460051A48F /* MainMenu.xib */,
+				FA75294113BED6460051A48F /* Supporting Files */,
+			);
+			path = XMGradientPanel;
+			sourceTree = "<group>";
+		};
+		FA75294113BED6460051A48F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA75294213BED6460051A48F /* XMGradientPanel-Info.plist */,
+				FA75294313BED6460051A48F /* InfoPlist.strings */,
+				FA75294613BED6460051A48F /* main.m */,
+				FA75294813BED6460051A48F /* XMGradientPanel-Prefix.pch */,
+				FA75294913BED6460051A48F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA75293513BED6460051A48F /* XMGradientPanel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA75295413BED6460051A48F /* Build configuration list for PBXNativeTarget "XMGradientPanel" */;
+			buildPhases = (
+				FA75293213BED6460051A48F /* Sources */,
+				FA75293313BED6460051A48F /* Frameworks */,
+				FA75293413BED6460051A48F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XMGradientPanel;
+			productName = XMGradientPanel;
+			productReference = FA75293613BED6460051A48F /* XMGradientPanel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA75292D13BED6460051A48F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = PowerMax;
+			};
+			buildConfigurationList = FA75293013BED6460051A48F /* Build configuration list for PBXProject "XMGradientPanel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FA75292B13BED6460051A48F;
+			productRefGroup = FA75293713BED6460051A48F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA75293513BED6460051A48F /* XMGradientPanel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA75293413BED6460051A48F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA75294513BED6460051A48F /* InfoPlist.strings in Resources */,
+				FA75294B13BED6460051A48F /* Credits.rtf in Resources */,
+				FA75295113BED6460051A48F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA75293213BED6460051A48F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA75294713BED6460051A48F /* main.m in Sources */,
+				FA75294E13BED6460051A48F /* XMGradientPanelAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA75294313BED6460051A48F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA75294413BED6460051A48F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA75294913BED6460051A48F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA75294A13BED6460051A48F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		FA75294F13BED6460051A48F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA75295013BED6460051A48F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA75295213BED6460051A48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FA75295313BED6460051A48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FA75295513BED6460051A48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XMGradientPanel/XMGradientPanel-Prefix.pch";
+				INFOPLIST_FILE = "XMGradientPanel/XMGradientPanel-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA75295613BED6460051A48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XMGradientPanel/XMGradientPanel-Prefix.pch";
+				INFOPLIST_FILE = "XMGradientPanel/XMGradientPanel-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA75293013BED6460051A48F /* Build configuration list for PBXProject "XMGradientPanel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA75295213BED6460051A48F /* Debug */,
+				FA75295313BED6460051A48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA75295413BED6460051A48F /* Build configuration list for PBXNativeTarget "XMGradientPanel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA75295513BED6460051A48F /* Debug */,
+				FA75295613BED6460051A48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA75292D13BED6460051A48F /* Project object */;
+}

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'XMGradientPanel' target in the 'XMGradientPanel' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
