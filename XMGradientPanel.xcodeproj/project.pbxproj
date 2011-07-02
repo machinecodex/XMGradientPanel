@@ -146,7 +146,7 @@
 		FA7529FC13BF00A10051A48F /* XMGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientView.m; sourceTree = "<group>"; };
 		FA7529FE13BF056D0051A48F /* XMApplicationSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMApplicationSupport.h; sourceTree = "<group>"; };
 		FA7529FF13BF056D0051A48F /* XMApplicationSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMApplicationSupport.m; sourceTree = "<group>"; };
-		FA752A0E13BF0E070051A48F /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
+		FA752A0E13BF0E070051A48F /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ReadMe.md; path = ../ReadMe.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
