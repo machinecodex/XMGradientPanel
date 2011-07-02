@@ -268,11 +268,14 @@ static XMGradientPanel *sharedGradientPanel = nil;
     
     return [NSArray arrayWithObjects:
             
+            [NSGradient clearGradient],
+            [NSGradient simpleGradient],
+            [NSGradient spectrumGradient],
             [NSGradient glossyGradient],
-            [NSGradient redGlossyGradient],
             [NSGradient darkGlossyGradient],
             [NSGradient midGlossyGradient],
             [NSGradient darkSubtleGradient],
+            [NSGradient redGlossyGradient],
             
              nil];
 }

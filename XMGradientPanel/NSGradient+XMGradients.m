@@ -165,4 +165,53 @@
 	return [newInstance autorelease];
 }
 
++ (id) spectrumGradient {
+	
+	float a = 1.0, s = 1.0, b = 1.0;
+	
+	CGFloat p1 = 0.0;
+	NSColor * c1 = [NSColor colorWithCalibratedHue:0.0 
+                                            saturation:s 
+                                            brightness:b 
+                                                 alpha:a];
+	
+	CGFloat p2 = 0.2;
+	NSColor * c2 = [NSColor colorWithCalibratedHue:0.2 
+                                            saturation:s 
+                                            brightness:b 
+                                                 alpha:a];
+
+    CGFloat p3 = 0.4;
+	NSColor * c3 = [NSColor colorWithCalibratedHue:0.4 
+                                            saturation:s 
+                                            brightness:b 
+                                                 alpha:a];
+
+    CGFloat p4 = 0.6;
+	NSColor * c4 = [NSColor colorWithCalibratedHue:0.6 
+                                        saturation:s 
+                                        brightness:b 
+                                             alpha:a];
+
+    CGFloat p5 = 0.8;
+	NSColor * c5 = [NSColor colorWithCalibratedHue:0.8 
+                                            saturation:s 
+                                            brightness:b 
+                                                 alpha:a];
+
+    CGFloat p6 = 1.0;
+	NSColor * c6 = [NSColor colorWithCalibratedHue:1.0 
+                                            saturation:s 
+                                            brightness:b 
+                                                 alpha:a];
+
+	id newInstance = [[NSGradient alloc] initWithColorsAndLocations: 
+					  
+					  c1, p1, c2, p2, c3, p3, c4, p4, c5, p5, c6, p6,
+					  
+					  nil];
+	
+	return [newInstance autorelease];
+}
+
 @end

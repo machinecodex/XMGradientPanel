@@ -25,4 +25,6 @@
 + (id) redGlossyGradient;
 + (id) darkSubtleGradient;
 
++ (id) spectrumGradient;
+
 @end
