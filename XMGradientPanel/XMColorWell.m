@@ -15,7 +15,7 @@
 {
 	// make NSColorWell slightly more friendly by broadcasting a notificaiton that it is is now active 
 	// so that other custom views using the color panel can stop listening to the color changes
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"XMColorWellDidActivateNotification" object:self userInfo:nil];
+	[[NSNotificationCenter defaultCenter] postNotificationName:XMColorWellDidActivateNotification object:self userInfo:nil];
 	[super activate:exclusive];
     
 }
