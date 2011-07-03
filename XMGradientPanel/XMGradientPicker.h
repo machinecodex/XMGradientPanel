@@ -13,14 +13,13 @@
  
 */
 
-
 #import <Foundation/Foundation.h>
 #import "XMViewControl.h"
 
 typedef enum {
     
-	kKTGradientPickerMouseDragState_NoDrag = 0,
-	kKTGradientPickerMouseDragState_DraggingColorStop
+	kXMGradientPickerMouseDragState_NoDrag = 0,
+	kXMGradientPickerMouseDragState_DraggingColorStop
 	
 } KTGradientPickerMouseDragState;
 
@@ -39,6 +38,10 @@ typedef enum {
 @property (assign) BOOL doDrawMidline;
 
 @end
+
+
+#pragma mark -
+#pragma mark -
 
 @interface XMGradientPicker (Checkerboard)
     

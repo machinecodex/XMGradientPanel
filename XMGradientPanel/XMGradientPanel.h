@@ -11,6 +11,8 @@
 @class XMGradientPicker;
 @class XMGradientWell;
 
+#define XMGradientPanelGradientChangedNotification @"XMGradientPanelGradientChangedNotification"
+
 @interface XMGradientPanel : NSPanel <NSSplitViewDelegate> {
 
     XMGradientPicker * _picker;

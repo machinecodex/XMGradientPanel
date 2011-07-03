@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const XMColorWellDidActivateNotification;
+#define XMColorWellDidActivateNotification @"XMColorWellDidActivateNotification"
 
 @interface XMColorWell : NSColorWell
 

@@ -10,17 +10,20 @@
 #import "NSGradient+XMGradients.h"
 #import "XMGradientPicker.h"
 #import "XMGradientWell.h"
-//#import "XMDefines.h"
 
 static XMGradientPanel *sharedGradientPanel = nil;
 
-#define XMGradientPanelGradientChangedNotification @"XMGradientPanelGradientChangedNotification"
 
 @implementation XMGradientPanel
 
-
 #pragma mark -
 #pragma mark Singleton
+
++ (void)initializeColorPanel {
+    
+	NSColorPanel * colorPanel = [NSColorPanel sharedColorPanel];
+	[colorPanel setShowsAlpha:YES];
+}
 
 + (void) initialize
 {
@@ -28,6 +31,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
     {
         // Initial version
         [self setVersion: 1];
+        [self initializeColorPanel];
     }
 }
 

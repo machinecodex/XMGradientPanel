@@ -15,6 +15,9 @@
 #define kGradientRectHeight 15
 #define kStopYOffset 4
 
+
+#pragma mark -
+
 @interface XMGradientPicker (Private)
 
 - (void)makeNewStopAtLocation:(CGFloat)theLocation;
@@ -26,6 +29,8 @@
 
 @end
 
+
+#pragma mark -
 
 @implementation XMGradientPicker
 
@@ -45,7 +50,7 @@
 	_gradientValue = [[NSGradient alloc] initWithStartingColor:[NSColor whiteColor] endingColor:[NSColor blackColor]];
     _doDrawMidline = YES;
 	_activeColorStop = NSNotFound;
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleColorWellActivated:) name:@"XMColorWellDidActivateNotification" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleColorWellActivated:) name:XMColorWellDidActivateNotification object:nil];
 	return self;
 }
 
@@ -63,7 +68,7 @@
 	[self setGradientValue:aGradientValue];
 	_activeColorStop = NSNotFound;
     
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleColorWellActivated:) name:@"XMColorWellDidActivateNotification" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleColorWellActivated:) name:XMColorWellDidActivateNotification object:nil];
 	
     return self;
 }
@@ -270,12 +275,12 @@
 		CGFloat aLocationOfActiveStop;
 		[_gradientValue getColor:nil location:&aLocationOfActiveStop atIndex:_activeColorStop];
         
-		if( _mouseDragState == kKTGradientPickerMouseDragState_NoDrag &&	
+		if( _mouseDragState == kXMGradientPickerMouseDragState_NoDrag &&	
            NSPointInRect(aMousePoint, [self rectForStopAtLocation:aLocationOfActiveStop])) {
             
-			_mouseDragState = kKTGradientPickerMouseDragState_DraggingColorStop;
+			_mouseDragState = kXMGradientPickerMouseDragState_DraggingColorStop;
 		}
-		else if(_mouseDragState == kKTGradientPickerMouseDragState_DraggingColorStop) {
+		else if(_mouseDragState == kXMGradientPickerMouseDragState_DraggingColorStop) {
             
 			NSRect aGradientRect = [self gradientRect];
 			[self moveStopAtIndex:_activeColorStop toLocation:((aMousePoint.y-.5-aGradientRect.origin.y)/aGradientRect.size.height)];
@@ -285,7 +290,7 @@
 
 - (void)mouseUp:(NSEvent*)theEvent {
     
-	if(_mouseDragState != kKTGradientPickerMouseDragState_NoDrag) {
+	if(_mouseDragState != kXMGradientPickerMouseDragState_NoDrag) {
         
 		if(_removeActiveColorStop) {
             
@@ -293,7 +298,7 @@
 			[[NSCursor arrowCursor] set];
 		}
         
-		_mouseDragState = kKTGradientPickerMouseDragState_NoDrag;
+		_mouseDragState = kXMGradientPickerMouseDragState_NoDrag;
 	}
     
 	[self setNeedsDisplay:YES];
@@ -468,12 +473,12 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (NSGradient *)gradientValue {
+- (NSGradient *) gradientValue {
     
     return _gradientValue;
 }
 
-- (void)setGradientValue:(NSGradient*)theGradient {
+- (void)setGradientValue:(NSGradient*) theGradient {
     
 	if(_gradientValue != theGradient) {
         
@@ -495,7 +500,7 @@
 #pragma mark -
 #pragma mark NSColorPanel
 
-- (IBAction)changeColor:(id)theSender {
+- (IBAction) changeColor:(id)theSender {
     
 	if(_activeColorStop == NSNotFound)
 		return;
