@@ -14,7 +14,7 @@ Our goal is to fill this gap with a standard, open-source set of control views, 
 
 The eventual aim is to make a flexible panel that can support multiple picker views. There is some serious refactoring necessary before this can become a reality. At present, there is a single picker, which uses simple target-action methods to set values. 
 
-XMGradientPanel also stores a set of preset gradients as a file in the Application Support folder.
+XMGradientPanel also stores a set of preset gradients in a file in the Application Support folder. At present will works on a per-app basis.
 
 Please feel free to contribute!
 
@@ -26,7 +26,7 @@ Simply add the XMUIKit classes to your project.
 Usage
 -----
 
-You can configure an XMGradientPanel very simply by adding an `XMGradientWell` custom view to your interface in IB and connecting it to an outlet in your controller class.
+You can configure an XMGradientPanel very simply by adding an `XMGradientWell` custom view to your interface in IB and connecting it to an outlet in your controller class. The gradient well will automatically create and manage the gradient panel.
 
 Then, to configure the gradient well, you might add the following code to `awakeFromNib` or `applicationDidFinishLaunching:`:
 
