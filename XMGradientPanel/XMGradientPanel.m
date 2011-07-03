@@ -124,6 +124,8 @@ static XMGradientPanel *sharedGradientPanel = nil;
 
 - (void) awakeFromNib {
         
+    [self setTitle:NSLocalizedString(@"Gradients", NULL)];
+    
     [_picker setTarget:self];
     [_picker setAction:@selector(takeValueFromPicker:)];
     

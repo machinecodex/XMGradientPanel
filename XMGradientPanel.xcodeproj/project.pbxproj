@@ -23,6 +23,7 @@
 		FA752A0F13BF0E070051A48F /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = FA752A0E13BF0E070051A48F /* ReadMe.md */; };
 		FA752A1213BF208E0051A48F /* XMViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA752A1113BF208D0051A48F /* XMViewControl.m */; };
 		FA752A3513BF299E0051A48F /* XMColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA752A3413BF299D0051A48F /* XMColorWell.m */; };
+		FA752A4913C05E010051A48F /* XMGradientPickerLinear.m in Sources */ = {isa = PBXBuildFile; fileRef = FA752A4813C05DFF0051A48F /* XMGradientPickerLinear.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		FA752A1113BF208D0051A48F /* XMViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMViewControl.m; sourceTree = "<group>"; };
 		FA752A3313BF299C0051A48F /* XMColorWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMColorWell.h; sourceTree = "<group>"; };
 		FA752A3413BF299D0051A48F /* XMColorWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMColorWell.m; sourceTree = "<group>"; };
+		FA752A4713C05DFC0051A48F /* XMGradientPickerLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGradientPickerLinear.h; sourceTree = "<group>"; };
+		FA752A4813C05DFF0051A48F /* XMGradientPickerLinear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientPickerLinear.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,7 @@
 				FA75295D13BEEB3B0051A48F /* XMGradientPanel.m */,
 				FA75295813BEEB3B0051A48F /* XMGradientPicker.h */,
 				FA75295913BEEB3B0051A48F /* XMGradientPicker.m */,
+				FA752A4B13C05E0C0051A48F /* Pickers */,
 				FA75295A13BEEB3B0051A48F /* XMGradientWell.h */,
 				FA75295B13BEEB3B0051A48F /* XMGradientWell.m */,
 				FA752A1013BF208C0051A48F /* XMViewControl.h */,
@@ -171,6 +175,15 @@
 				FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FA752A4B13C05E0C0051A48F /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				FA752A4713C05DFC0051A48F /* XMGradientPickerLinear.h */,
+				FA752A4813C05DFF0051A48F /* XMGradientPickerLinear.m */,
+			);
+			name = Pickers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +261,7 @@
 				FA752A0013BF056D0051A48F /* XMApplicationSupport.m in Sources */,
 				FA752A1213BF208E0051A48F /* XMViewControl.m in Sources */,
 				FA752A3513BF299E0051A48F /* XMColorWell.m in Sources */,
+				FA752A4913C05E010051A48F /* XMGradientPickerLinear.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +383,7 @@
 				FA75295613BED6460051A48F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

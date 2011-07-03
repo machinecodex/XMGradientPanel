@@ -8,9 +8,11 @@
 
 /* 
  
- This class is based on KTGradientPicker from KTUIKit.
+ This is the abstract superclass for all Gradient Pickers.
+
+ Based on KTGradientPicker from KTUIKit.
  http://code.google.com/p/ktuikit/
- 
+  
 */
 
 #import <Foundation/Foundation.h>
@@ -21,7 +23,7 @@ typedef enum {
 	kXMGradientPickerMouseDragState_NoDrag = 0,
 	kXMGradientPickerMouseDragState_DraggingColorStop
 	
-} KTGradientPickerMouseDragState;
+} XMGradientPickerMouseDragState;
 
 
 @interface XMGradientPicker : XMViewControl {
@@ -29,7 +31,7 @@ typedef enum {
     NSGradient *						_gradientValue;
 	NSInteger							_activeColorStop;
 	BOOL								_removeActiveColorStop;
-	KTGradientPickerMouseDragState		_mouseDragState;
+	XMGradientPickerMouseDragState		_mouseDragState;
     
     BOOL _doDrawTickMarks;
     NSInteger _numberOfTickMarks;
