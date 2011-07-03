@@ -23,9 +23,7 @@
 		[fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&err];
     
     if (err) NSLog(@"Error: %@", err);
-	
-    //    NSLog(@"Created path at: %@", path);
-    
+	    
 	return path;
 }
 

@@ -12,33 +12,49 @@
 
 @interface XMGradientView (PrivateMethods)
 
--(void)drawOutline:(NSRect)aRect;
--(void)drawBottomBorder:(NSRect)aRect;
--(void)drawTopBorder:(NSRect)aRect;
+- (void) update:(id)sender;
+
+- (void) drawOutline:(NSRect)aRect;
+- (void) drawBottomBorder:(NSRect)aRect;
+- (void) drawTopBorder:(NSRect)aRect;
+- (void) drawLeftBorder:(NSRect)aRect;
+- (void) drawRightBorder:(NSRect)aRect;
 
 @end
 
 
+#pragma mark -
+
 @implementation XMGradientView
 
-@synthesize outlineColor;
-@synthesize bottomBorderColor;
-@synthesize topBorderColor;
-@synthesize gradient;
-@synthesize doesDrawBottomBorder;
-@synthesize doesDrawTopBorder;
-@synthesize doesDrawOutline;
+@synthesize gradient = _gradient;
+@synthesize gradientAngle = _gradientAngle;
+
+@synthesize doesDrawOutline = _doesDrawOutline;
+@synthesize doesDrawBottomBorder = _doesDrawBottomBorder;
+@synthesize doesDrawTopBorder = _doesDrawTopBorder;
+@synthesize doesDrawLeftBorder = _doesDrawLeftBorder;
+@synthesize doesDrawRightBorder = _doesDrawRightBorder;
+
+@synthesize outlineColor = _outlineColor;
+
+
+#pragma mark -
+#pragma mark Setup
 
 - (id)initWithFrame:(NSRect)frameRect {
 	
-	if ((self = [super initWithFrame:frameRect])) 
-	{
-		[self setDoesDrawOutline:YES];
-		[self setDoesDrawTopBorder:NO];
-		[self setDoesDrawBottomBorder:NO];
-
+	if ((self = [super initWithFrame:frameRect])) {
+        
 		self.outlineColor = [NSColor colorWithCalibratedWhite:0.25 alpha:1.0];
 		self.gradient = [NSGradient inverseGlossyGradient];
+        
+        _gradientAngle = 90.0f;
+		_doesDrawOutline = YES;
+		_doesDrawTopBorder = NO;
+		_doesDrawBottomBorder = NO;
+        _doesDrawRightBorder = NO;
+        _doesDrawLeftBorder = NO;
 		
 		return self;
 	}
@@ -48,9 +64,8 @@
 
 - (void)dealloc {
     
-	[outlineColor release], outlineColor = nil;
-	[bottomBorderColor release], bottomBorderColor = nil;
-	[topBorderColor release], topBorderColor = nil;
+    [_gradient release]; _gradient = nil;
+	[_outlineColor release], _outlineColor = nil;
 	[super dealloc];
 }
 
@@ -58,19 +73,21 @@
 	
 	[super drawRect:[self bounds]];
 	
-	[self.gradient drawInRect:[self bounds] angle:90];
+	[self.gradient drawInRect:[self bounds] angle:self.gradientAngle];
 	
-	if ([self doesDrawOutline])
-		[self drawOutline:[self bounds]];
-	if (self.doesDrawTopBorder)
-		[self drawTopBorder:[self bounds]];
-	if (self.doesDrawBottomBorder)
-		[self drawBottomBorder:[self bounds]];		
+    [self drawOutline:[self bounds]];
+    
+    [self drawLeftBorder:[self bounds]];
+	[self drawTopBorder:[self bounds]];
+    [self drawRightBorder:[self bounds]];
+	[self drawBottomBorder:[self bounds]];		
 }
 
--(void)drawOutline:(NSRect)aRect {
+- (void) drawOutline:(NSRect)aRect {
     
-	float maxX = aRect.size.width;
+	if (!self.doesDrawOutline) return;
+
+    float maxX = aRect.size.width;
 	float maxY = aRect.size.height;
 	NSBezierPath *outline = [NSBezierPath bezierPath];
 	
@@ -87,8 +104,10 @@
 	[outline stroke];
 }
 
--(void)drawBottomBorder:(NSRect)aRect {
+- (void) drawBottomBorder:(NSRect)aRect {
     
+	if (!self.doesDrawBottomBorder) return;
+
 	float maxX = aRect.size.width;
 	NSBezierPath *line = [NSBezierPath bezierPath];
 	
@@ -98,14 +117,16 @@
 	
 	[line setLineCapStyle:NSButtLineCapStyle];
 	[line setLineJoinStyle:NSRoundLineJoinStyle];
-	[self.bottomBorderColor set];
+	[self.outlineColor set];
 	[line setLineWidth:1];
 	[line stroke];
 }
 
--(void)drawTopBorder:(NSRect)aRect  {
+- (void) drawTopBorder:(NSRect)aRect  {
     
-	float maxX = aRect.size.width;
+	if (!self.doesDrawTopBorder) return;
+ 
+    float maxX = aRect.size.width;
 	float maxY = aRect.size.height;
 	NSBezierPath *line = [NSBezierPath bezierPath];
 	
@@ -115,9 +136,81 @@
 	
 	[line setLineCapStyle:NSButtLineCapStyle];
 	[line setLineJoinStyle:NSRoundLineJoinStyle];
-	[self.topBorderColor set];
+	[self.outlineColor set];
 	[line setLineWidth:1];
 	[line stroke];
+}
+
+- (void) drawLeftBorder:(NSRect)aRect  {
+    
+	if (!self.doesDrawLeftBorder) return;
+
+	float maxY = aRect.size.height;
+	NSBezierPath *line = [NSBezierPath bezierPath];
+	
+	[line moveToPoint:NSMakePoint(0.5, 0.5)];
+	[line lineToPoint:NSMakePoint(0.5, maxY - 0.5)];
+	[line closePath];
+	
+	[line setLineCapStyle:NSButtLineCapStyle];
+	[line setLineJoinStyle:NSRoundLineJoinStyle];
+	[self.outlineColor set];
+	[line setLineWidth:1];
+	[line stroke];
+}
+
+- (void) drawRightBorder:(NSRect)aRect  {
+    
+	if (!self.doesDrawRightBorder) return;
+
+	float maxX = aRect.size.width;
+	float maxY = aRect.size.height;
+	NSBezierPath *line = [NSBezierPath bezierPath];
+	
+	[line moveToPoint:NSMakePoint(maxX - 0.5, 0.5)];
+	[line lineToPoint:NSMakePoint(maxX - 0.5, maxY - 0.5)];
+	[line closePath];
+	
+	[line setLineCapStyle:NSButtLineCapStyle];
+	[line setLineJoinStyle:NSRoundLineJoinStyle];
+	[self.outlineColor set];
+	[line setLineWidth:1];
+	[line stroke];
+}
+
+- (void) update:(id)sender {
+    
+    [self setNeedsDisplay:YES];
+}
+
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void) setGradient:(NSGradient *)theGradient {
+    
+	if(_gradient != theGradient) {
+        
+		[_gradient release];
+        
+		if(theGradient == nil)
+			_gradient = [[NSGradient alloc] initWithStartingColor:[NSColor whiteColor] endingColor:[NSColor blackColor]];
+        
+		else _gradient = [theGradient retain];
+        
+		[self update:self];
+	}
+}
+
+- (CGFloat) gradientAngle {
+    
+    return _gradientAngle;
+}
+
+- (void) setGradientAngle:(CGFloat)aGradientAngle {
+    
+    _gradientAngle = aGradientAngle;
+    [self update:self];
 }
 
 @end

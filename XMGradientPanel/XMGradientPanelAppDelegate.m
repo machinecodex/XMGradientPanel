@@ -32,7 +32,11 @@
 - (IBAction) setGradient:(id)sender {
     
     [gradientView setGradient:[sender gradient]];
-    [gradientView display];
+}
+
+- (IBAction) setGradientAngle:(id)sender {
+
+    [gradientView setGradientAngle:[sender doubleValue]];
 }
 
 @end

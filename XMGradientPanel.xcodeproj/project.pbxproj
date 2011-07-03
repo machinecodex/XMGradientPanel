@@ -140,10 +140,10 @@
 			children = (
 				FA75294C13BED6460051A48F /* XMGradientPanelAppDelegate.h */,
 				FA75294D13BED6460051A48F /* XMGradientPanelAppDelegate.m */,
-				FA7529FB13BF00A10051A48F /* XMGradientView.h */,
-				FA7529FC13BF00A10051A48F /* XMGradientView.m */,
 				FA7529FE13BF056D0051A48F /* XMApplicationSupport.h */,
 				FA7529FF13BF056D0051A48F /* XMApplicationSupport.m */,
+				FA7529FB13BF00A10051A48F /* XMGradientView.h */,
+				FA7529FC13BF00A10051A48F /* XMGradientView.m */,
 				FA75294F13BED6460051A48F /* MainMenu.xib */,
 			);
 			name = "Demo App";

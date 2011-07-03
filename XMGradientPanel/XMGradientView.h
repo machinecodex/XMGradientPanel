@@ -10,24 +10,28 @@
 
 @interface XMGradientView : NSView {
 	
-	BOOL doesDrawOutline;
-	BOOL doesDrawTopBorder;
-	BOOL doesDrawBottomBorder;	
+	BOOL _doesDrawOutline;
+	BOOL _doesDrawTopBorder;
+	BOOL _doesDrawBottomBorder;	
+	BOOL _doesDrawLeftBorder;
+	BOOL _doesDrawRightBorder;	
 	
-	NSColor * outlineColor;
-	NSColor * topBorderColor;
-	NSColor * bottomBorderColor;
+	NSColor * _outlineColor;
 	
-	NSGradient * gradient;
+	NSGradient * _gradient;
+    CGFloat _gradientAngle;
 }
 
-@property (nonatomic, retain) NSColor *outlineColor;
-@property (nonatomic, retain) NSColor *bottomBorderColor;
-@property (nonatomic, retain) NSColor *topBorderColor;
-@property (nonatomic, assign) BOOL doesDrawBottomBorder;
-@property (nonatomic, assign) BOOL doesDrawTopBorder;
 @property (nonatomic, assign) BOOL doesDrawOutline;
+@property (nonatomic, assign) BOOL doesDrawTopBorder;
+@property (nonatomic, assign) BOOL doesDrawBottomBorder;
+@property (nonatomic, assign) BOOL doesDrawLeftBorder;
+@property (nonatomic, assign) BOOL doesDrawRightBorder;
+
+@property (nonatomic, retain) NSColor *outlineColor;
+
 @property (nonatomic, retain) NSGradient *gradient;
+@property (assign) CGFloat gradientAngle;
 
 @end
 
