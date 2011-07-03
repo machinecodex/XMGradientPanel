@@ -15,6 +15,8 @@
 #define kGradientRectHeight 15
 #define kStopYOffset 4
 
+#define kTickMarkXOffsetBegin 20.0
+#define kTickMarkXOffsetEnd 5.0
 
 #pragma mark -
 
@@ -34,7 +36,9 @@
 
 @implementation XMGradientPicker
 
-@synthesize doDrawMidline = _doDrawMidline;
+@synthesize doDrawTickMarks = _doDrawTickMarks;
+@synthesize numberOfTickMarks = _numberOfTickMarks;
+
 
 #pragma mark -
 #pragma mark Setup
@@ -46,7 +50,8 @@
 		return nil;
     
 	_gradientValue = [[NSGradient alloc] initWithStartingColor:[NSColor whiteColor] endingColor:[NSColor blackColor]];
-    _doDrawMidline = YES;
+    _doDrawTickMarks = YES;
+    _numberOfTickMarks = 5;
 	_activeColorStop = NSNotFound;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleColorWellActivated:) name:XMColorWellDidActivateNotification object:nil];
 	return self;
@@ -57,8 +62,9 @@
 	if (![super initWithCoder:theCoder])
 		return nil;
 
-    _doDrawMidline = [theCoder decodeBoolForKey:@"doDrawMidline"];
 	NSGradient * aGradientValue = [theCoder decodeObjectForKey:@"gradientValue"];
+    _doDrawTickMarks = [theCoder decodeBoolForKey:@"doDrawTickMarks"];
+    _numberOfTickMarks = [theCoder decodeIntegerForKey:@"numberOfTickMarks"];
     
 	if(aGradientValue == nil)
 		aGradientValue = [[NSGradient alloc] initWithStartingColor:[NSColor whiteColor] endingColor:[NSColor blackColor]];
@@ -75,8 +81,9 @@
 {	
 	[super encodeWithCoder:theCoder];
 
-	[theCoder encodeBool:_doDrawMidline forKey:@"doDrawMidline"];
 	[theCoder encodeObject:[self gradientValue] forKey:@"gradientValue"];
+	[theCoder encodeBool:_doDrawTickMarks forKey:@"doDrawTickMarks"];
+    [theCoder encodeInteger:_numberOfTickMarks forKey:@"numberOfTickMarks"];
 }
 
 - (void)dealloc
@@ -101,18 +108,32 @@
 #pragma mark -
 #pragma mark Drawing
 
-- (void) drawMidlineInRect:(NSRect)aRect {
+- (void) drawTickMarksInRect:(NSRect)aRect {
     
-    NSBezierPath *line = [NSBezierPath bezierPath];
+    NSInteger i;
+    NSInteger n = _numberOfTickMarks - 1;
+    CGFloat d = aRect.size.height/n;
+   
+    [[[NSColor grayColor] colorWithAlphaComponent:0.5] set];
     
-    [line moveToPoint:NSMakePoint(aRect.origin.x - 25, 
-                                  aRect.origin.y + aRect.size.height/2 + 0.5)];
-    [line lineToPoint:NSMakePoint(NSMaxX(aRect), 
-                                  aRect.origin.y + aRect.size.height/2 + 0.5)];
-    
-    [[[NSColor blackColor] colorWithAlphaComponent:0.25] set];
-    [line setLineWidth:1.0];
-    [line stroke];  
+    for (i = 0; i <= n; i++) {
+        
+        NSBezierPath *line = [[NSBezierPath alloc] init];
+        
+        CGFloat x1 = aRect.origin.x - kTickMarkXOffsetBegin;
+        CGFloat x2 = aRect.origin.x - kTickMarkXOffsetEnd;
+        CGFloat y = aRect.origin.y + d * i;
+        
+        [line moveToPoint:NSMakePoint(floor(x1), 
+                                      floor(y) + 0.5)];
+        [line lineToPoint:NSMakePoint(floor(x2), 
+                                      floor(y) + 0.5)];
+        
+        [line setLineWidth:1.0];
+        [line stroke]; 
+        [line closePath];
+        [line release];
+    }
 }
 
 - (void) drawInContext:(CGContextRef)theContext {
@@ -127,7 +148,7 @@
 	[[NSColor colorWithDeviceWhite:.6 alpha:anEnabledAlpha] set];
 	[NSBezierPath strokeRect:aGradientRect];
 	
-	// stops
+	// Draw stops
 	NSInteger aNumberOfStops = [_gradientValue numberOfColorStops];
 	NSInteger i;
 	for(i = 0; i < aNumberOfStops; i++)
@@ -141,12 +162,12 @@
 		aStopRect = [self rectForStopAtLocation:aLocation];
 		
 		NSColor * aHighlightColor = nil;
-		if(i==_activeColorStop)
-		{
-			if([[NSColorPanel sharedColorPanel] isVisible])
-			{
+		if(i == _activeColorStop) {
+            
+			if([[NSColorPanel sharedColorPanel] isVisible]) {
+                
 				[[NSColor colorWithDeviceWhite:.45 alpha:anEnabledAlpha] set];
-				[NSBezierPath fillRect:aStopRect];
+				[NSBezierPath fillRect:NSIntegralRect(aStopRect)];
 			}
 			aHighlightColor = [NSColor colorWithDeviceWhite:0 alpha:anEnabledAlpha];
 		}
@@ -160,8 +181,9 @@
 		[NSBezierPath strokeRect:aStopRect];
 		[NSBezierPath strokeRect:NSInsetRect(aStopRect, anInset, anInset)];
         
-		CGFloat aLocationY = aGradientRect.origin.y+aGradientRect.size.height*aLocation;
+		CGFloat aLocationY = aGradientRect.origin.y + aGradientRect.size.height*aLocation;
         
+        // Draw line across view
 		[NSBezierPath strokeLineFromPoint:
          NSMakePoint(aStopRect.origin.x+aStopRect.size.width, 
                      aStopRect.origin.y+aStopRect.size.height*.5)
@@ -169,13 +191,11 @@
          NSMakePoint(aStopRect.origin.x+aStopRect.size.width+aGradientRect.size.width+10, 
                      aStopRect.origin.y+aStopRect.size.height*.5)];
         
-		[NSBezierPath fillRect:NSMakeRect(aGradientRect.origin.x+aGradientRect.size.width, aLocationY-2.5, 5, 5)];
+        // Draw stop square at far end of line
+		[NSBezierPath fillRect:NSIntegralRect(NSMakeRect(aGradientRect.origin.x+aGradientRect.size.width, aLocationY-2.5, 5, 5))];
 	}	
     
-    if (self.doDrawMidline) {
-
-        [self drawMidlineInRect:aGradientRect];
-    }
+    if (self.doDrawTickMarks) [self drawTickMarksInRect:aGradientRect];
 }
 
 
@@ -562,8 +582,8 @@
 - (NSRect) gradientRect {
     
 	NSRect aViewRect = [self bounds];
-	aViewRect.size.width -= 30;
-	aViewRect.size.height -= 30;
+	aViewRect.size.width -= 35;
+	aViewRect.size.height -= 33;
 	aViewRect.origin.x += 15.5;
 	aViewRect.origin.y += 15.5;
     
@@ -572,7 +592,8 @@
     CGFloat dimension = MAX(kGradientRectHeight, aViewRect.size.width - 20);
     
 	aGradientRect.origin.y = aViewRect.origin.x + kStopControlSize*.5;
-	aGradientRect.origin.x = aViewRect.origin.y+aViewRect.size.width - dimension - kStopYOffset;
+	aGradientRect.origin.x = aViewRect.origin.y + aViewRect.size.width 
+                            - dimension - kStopYOffset;
 	aGradientRect.size.height = aViewRect.size.height-kStopControlSize;
 	aGradientRect.size.width = dimension;
     
@@ -584,9 +605,9 @@
 	NSRect aStopRect;
 	NSRect aGradientRect = [self gradientRect];
 	aStopRect.size = NSMakeSize(kStopControlSize, kStopControlSize);
-	aStopRect.origin.y = aGradientRect.origin.y+aGradientRect.size.height*theLocation;
-	aStopRect.origin.y-=kStopControlSize*.5;
-	aStopRect.origin.x=aGradientRect.origin.x - kStopControlSize - kStopYOffset;
+	aStopRect.origin.y = aGradientRect.origin.y + aGradientRect.size.height * theLocation;
+	aStopRect.origin.y -= kStopControlSize * .5;
+	aStopRect.origin.x = aGradientRect.origin.x - kStopControlSize - kStopYOffset;
 	
 	return aStopRect;
 }
@@ -597,18 +618,26 @@
 // =========== Checkerboard drawing category =========== //
 #pragma mark -
 
+#define kGridAlpha 0.5f
+
 @implementation XMGradientPicker (Checkerboard)
 
 - (void) drawCheckerboardInContext:(CGContextRef)theContext {
     
     [NSGraphicsContext saveGraphicsState];
 
+    // Set up clipping
 	NSRect rect = [self gradientRect];	
     NSBezierPath* clipPath = [NSBezierPath bezierPathWithRect:rect];
     [clipPath addClip];
     
-    NSInteger tx = 13; NSInteger ty = tx; 
-    NSInteger lx = rect.size.width / tx * 1.2; NSInteger ly = rect.size.height / ty * 1.2;
+    // Fill the background
+    [[NSColor whiteColor] set];
+    NSRectFill(rect);
+    
+    // Draw the checkerboard
+    NSInteger tx = 13; NSInteger ty = tx; CGFloat scale = 1.33;
+    NSInteger lx = rect.size.width / tx * scale; NSInteger ly = rect.size.height / ty * scale;
     NSInteger xb, yb, i = 0, j = 0;
     NSColor *oddColor, *evenColor;
     oddColor = [NSColor whiteColor]; evenColor = [NSColor lightGrayColor];
@@ -621,12 +650,12 @@
 
             if (((i+j) % 2) != 0) { // it's an odd square
                 
-                [[oddColor colorWithAlphaComponent:0.25] set];
+                [[oddColor colorWithAlphaComponent:kGridAlpha] set];
                 NSRectFill(NSMakeRect(xb,yb,xb+tx,yb+ty));
             }
             else { // it's an even square 
              
-                [[evenColor colorWithAlphaComponent:0.25] set];
+                [[evenColor colorWithAlphaComponent:kGridAlpha] set];
                 NSRectFill(NSMakeRect(xb,yb,xb+tx,yb+ty));
             }
             

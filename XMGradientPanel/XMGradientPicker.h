@@ -26,16 +26,18 @@ typedef enum {
 
 @interface XMGradientPicker : XMViewControl {
     
-    BOOL _doDrawMidline;
-
     NSGradient *						_gradientValue;
 	NSInteger							_activeColorStop;
 	BOOL								_removeActiveColorStop;
 	KTGradientPickerMouseDragState		_mouseDragState;
+    
+    BOOL _doDrawTickMarks;
+    NSInteger _numberOfTickMarks;
 }
 
 @property (readwrite,retain) NSGradient * gradientValue;
-@property (assign) BOOL doDrawMidline;
+@property (assign) BOOL doDrawTickMarks;
+@property (assign) NSInteger numberOfTickMarks;
 
 @end
 
