@@ -11,12 +11,12 @@
 
 @interface NSGradient (XMGradients)
 
-+ (NSGradient *) simpleGradient;
-+ (NSGradient *) clearGradient;
-
 + (id) gradientFromColor:(NSColor *)color1 toColor:(NSColor *)color2;
 
 + (id) glossyGradientWithMidpoint:(CGFloat)midpoint color1:(NSColor *)color1 color2:(NSColor *)color2 color3:(NSColor *)color3 color4:(NSColor *)color4;
+
++ (NSGradient *) simpleGradient;
++ (NSGradient *) clearGradient;
 
 + (id) glossyGradient;
 + (id) inverseGlossyGradient;

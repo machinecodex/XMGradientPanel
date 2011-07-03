@@ -22,11 +22,13 @@
 
 @interface XMGradientPicker (Private)
 
+- (NSRect) gradientRect;
+- (NSRect) rectForStopAtLocation:(CGFloat)theLocation;
+
 - (void) makeNewStopAtLocation:(CGFloat)theLocation;
 - (void) removeStopAtIndex:(NSInteger)theIndex;
 - (void) moveStopAtIndex:(NSInteger)theIndex toLocation:(CGFloat)theLocation;
-- (NSRect) gradientRect;
-- (NSRect) rectForStopAtLocation:(CGFloat)theLocation;
+
 - (void) deactivateOtherWells:(id)sender;
 - (void) recursiveDeactivateColorWellsInViews:(NSArray*)theViews;
 

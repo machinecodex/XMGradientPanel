@@ -11,22 +11,18 @@
 #import "XMGradientWell.h"
 #import "QuartzCore/CIFilter.h"
 
-#define kStopControlSize 12
-#define kGradientRectHeight 15
-#define kStopYOffset 4
-
-#define kTickMarkXOffsetBegin 19.0
-#define kTickMarkXOffsetEnd 7.0
 
 #pragma mark -
 
 @interface XMGradientPicker (Private)
 
+- (NSRect) gradientRect;
+- (NSRect) rectForStopAtLocation:(CGFloat)theLocation;
+
 - (void) makeNewStopAtLocation:(CGFloat)theLocation;
 - (void) removeStopAtIndex:(NSInteger)theIndex;
 - (void) moveStopAtIndex:(NSInteger)theIndex toLocation:(CGFloat)theLocation;
-- (NSRect) gradientRect;
-- (NSRect) rectForStopAtLocation:(CGFloat)theLocation;
+
 - (void) deactivateOtherWells:(id)sender;
 - (void) recursiveDeactivateColorWellsInViews:(NSArray*)theViews;
 
@@ -54,7 +50,9 @@
     _doDrawTickMarks = NO;
     _numberOfTickMarks = 5;
 	_activeColorStop = NSNotFound;
+    
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleColorWellActivated:) name:XMColorWellDidActivateNotification object:nil];
+    
 	return self;
 }
 

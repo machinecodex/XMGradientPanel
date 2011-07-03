@@ -24,6 +24,11 @@
     [gradientWell setAction:@selector(setGradient:)];
 }
 
+- (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    
+	return YES;
+}
+
 - (IBAction) setGradient:(id)sender {
     
     [gradientView setGradient:[sender gradient]];
