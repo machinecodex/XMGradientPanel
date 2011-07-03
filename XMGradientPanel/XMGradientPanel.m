@@ -96,6 +96,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
     
     NSInteger j;
     for (j = 0; j < 2; j++) {
+        
         NSInteger i;
         for (i = 0; i < 10; i++) {
             

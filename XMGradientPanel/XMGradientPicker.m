@@ -45,8 +45,6 @@
 	if(![super initWithFrame:theFrame])
 		return nil;
     
-    NSLog(@"initWithFrame");
-
 	_gradientValue = [[NSGradient alloc] initWithStartingColor:[NSColor whiteColor] endingColor:[NSColor blackColor]];
     _doDrawMidline = YES;
 	_activeColorStop = NSNotFound;
@@ -76,8 +74,9 @@
 - (void)encodeWithCoder:(NSCoder*)theCoder
 {	
 	[super encodeWithCoder:theCoder];
-	[theCoder encodeObject:[self gradientValue] forKey:@"gradientValue"];
+
 	[theCoder encodeBool:_doDrawMidline forKey:@"doDrawMidline"];
+	[theCoder encodeObject:[self gradientValue] forKey:@"gradientValue"];
 }
 
 - (void)dealloc
@@ -106,17 +105,17 @@
     
     NSBezierPath *line = [NSBezierPath bezierPath];
     
-    [line moveToPoint:NSMakePoint(aRect.origin.x - 24, 
-                                  aRect.origin.y + aRect.size.height/2)];
+    [line moveToPoint:NSMakePoint(aRect.origin.x - 25, 
+                                  aRect.origin.y + aRect.size.height/2 + 0.5)];
     [line lineToPoint:NSMakePoint(NSMaxX(aRect), 
-                                  aRect.origin.y + aRect.size.height/2)];
+                                  aRect.origin.y + aRect.size.height/2 + 0.5)];
     
     [[[NSColor blackColor] colorWithAlphaComponent:0.25] set];
     [line setLineWidth:1.0];
     [line stroke];  
 }
 
-- (void)drawInContext:(CGContextRef)theContext {
+- (void) drawInContext:(CGContextRef)theContext {
 	
 	CGFloat anEnabledAlpha = [self isEnabled] ? 1.0 : 0.4;
 	
@@ -563,17 +562,20 @@
 - (NSRect) gradientRect {
     
 	NSRect aViewRect = [self bounds];
-	aViewRect.size.width -= 2;
-	aViewRect.size.height -= 2;
-	aViewRect.origin.x += 1.5;
-	aViewRect.origin.y += 1.5;
+	aViewRect.size.width -= 30;
+	aViewRect.size.height -= 30;
+	aViewRect.origin.x += 15.5;
+	aViewRect.origin.y += 15.5;
+    
 	NSRect aGradientRect;
+    
     CGFloat dimension = MAX(kGradientRectHeight, aViewRect.size.width - 20);
     
 	aGradientRect.origin.y = aViewRect.origin.x + kStopControlSize*.5;
 	aGradientRect.origin.x = aViewRect.origin.y+aViewRect.size.width - dimension - kStopYOffset;
 	aGradientRect.size.height = aViewRect.size.height-kStopControlSize;
 	aGradientRect.size.width = dimension;
+    
 	return aGradientRect;
 }
 
