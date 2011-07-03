@@ -51,7 +51,7 @@ A simple example project is included.
 Status
 --------
 
-`XMGradientPanel` should be considered an alpha project. There are many aspects that need improving, but it works.
+XMGradientPanel should be considered an alpha project. There are many aspects that need improving, but it works!
 
 Attribution
 -----------

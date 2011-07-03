@@ -3,7 +3,7 @@
 //  DateLine 2
 //
 //  Created by Alex Clarke on 5/05/11.
-//  Copyright 2011 PowerMax. All rights reserved.
+//  Copyright 2011 MachineCodex Software. All rights reserved.
 //
 
 #import "XMGradientPanel.h"

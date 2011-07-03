@@ -3,7 +3,7 @@
 //  DateLine 2
 //
 //  Created by Alex Clarke on 3/05/11.
-//  Copyright 2011 PowerMax. All rights reserved.
+//  Copyright 2011 MachineCodex Software. All rights reserved.
 //
 
 #import "XMGradientPicker.h"
@@ -99,8 +99,6 @@
 
 - (void)drawInContext:(CGContextRef)theContext {
 	
-    NSLog(@"drawInContext");
-
 	CGFloat anEnabledAlpha = [self isEnabled] ? 1.0 : 0.4;
 	
 	NSRect aGradientRect = [self gradientRect];	

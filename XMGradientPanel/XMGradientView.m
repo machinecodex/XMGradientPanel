@@ -57,7 +57,7 @@
 {	
 	[super drawRect:[self bounds]];
 	
-	[self.gradient drawInRect:[self bounds] angle:270];
+	[self.gradient drawInRect:[self bounds] angle:90];
 	
 	if ([self doesDrawOutline])
 		[self drawOutline:[self bounds]];

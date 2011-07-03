@@ -3,7 +3,7 @@
 //  XMGradientPanel
 //
 //  Created by Alex Clarke on 2/07/11.
-//  Copyright 2011 PowerMax. All rights reserved.
+//  Copyright 2011 MachineCodex Software. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -21,6 +21,7 @@
 @property (readwrite, assign) BOOL isEnabled;
 @property (readwrite, assign) id target;
 @property (readwrite, assign) SEL action;
-- (void)performAction;
+
+- (void) performAction;
 
 @end
