@@ -15,8 +15,8 @@
 #define kGradientRectHeight 15
 #define kStopYOffset 4
 
-#define kTickMarkXOffsetBegin 20.0
-#define kTickMarkXOffsetEnd 5.0
+#define kTickMarkXOffsetBegin 19.0
+#define kTickMarkXOffsetEnd 7.0
 
 #pragma mark -
 
@@ -583,18 +583,18 @@
     
 	NSRect aViewRect = [self bounds];
 	aViewRect.size.width -= 35;
-	aViewRect.size.height -= 33;
-	aViewRect.origin.x += 15.5;
+	aViewRect.size.height -= 23;
+	aViewRect.origin.x += 10.5;
 	aViewRect.origin.y += 15.5;
     
 	NSRect aGradientRect;
     
-    CGFloat dimension = MAX(kGradientRectHeight, aViewRect.size.width - 20);
+    CGFloat dimension = MAX(kGradientRectHeight, aViewRect.size.width - 34);
     
-	aGradientRect.origin.y = aViewRect.origin.x + kStopControlSize*.5;
-	aGradientRect.origin.x = aViewRect.origin.y + aViewRect.size.width 
+	aGradientRect.origin.y = aViewRect.origin.y + kStopControlSize*.5;
+	aGradientRect.origin.x = aViewRect.origin.x + aViewRect.size.width 
                             - dimension - kStopYOffset;
-	aGradientRect.size.height = aViewRect.size.height-kStopControlSize;
+	aGradientRect.size.height = aViewRect.size.height - kStopControlSize;
 	aGradientRect.size.width = dimension;
     
 	return aGradientRect;
@@ -636,7 +636,7 @@
     NSRectFill(rect);
     
     // Draw the checkerboard
-    NSInteger tx = 13; NSInteger ty = tx; CGFloat scale = 1.33;
+    NSInteger tx = 13; NSInteger ty = tx; CGFloat scale = 2.0;
     NSInteger lx = rect.size.width / tx * scale; NSInteger ly = rect.size.height / ty * scale;
     NSInteger xb, yb, i = 0, j = 0;
     NSColor *oddColor, *evenColor;
