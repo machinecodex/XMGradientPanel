@@ -29,32 +29,33 @@
 @synthesize doesDrawTopBorder;
 @synthesize doesDrawOutline;
 
-- (id)initWithFrame:(NSRect)frameRect
-{	
+- (id)initWithFrame:(NSRect)frameRect {
+	
 	if ((self = [super initWithFrame:frameRect])) 
 	{
 		[self setDoesDrawOutline:YES];
 		[self setDoesDrawTopBorder:NO];
 		[self setDoesDrawBottomBorder:NO];
 
-		self.outlineColor = [NSColor colorWithCalibratedWhite:0.85 alpha:1.0];
-
+		self.outlineColor = [NSColor colorWithCalibratedWhite:0.25 alpha:1.0];
 		self.gradient = [NSGradient inverseGlossyGradient];
 		
 		return self;
 	}
+    
 	return nil;
 }
 
 - (void)dealloc {
+    
 	[outlineColor release], outlineColor = nil;
 	[bottomBorderColor release], bottomBorderColor = nil;
 	[topBorderColor release], topBorderColor = nil;
 	[super dealloc];
 }
 
-- (void)drawRect:(NSRect)aRect 
-{	
+- (void)drawRect:(NSRect)aRect {
+	
 	[super drawRect:[self bounds]];
 	
 	[self.gradient drawInRect:[self bounds] angle:90];
@@ -67,8 +68,8 @@
 		[self drawBottomBorder:[self bounds]];		
 }
 
--(void)drawOutline:(NSRect)aRect 
-{
+-(void)drawOutline:(NSRect)aRect {
+    
 	float maxX = aRect.size.width;
 	float maxY = aRect.size.height;
 	NSBezierPath *outline = [NSBezierPath bezierPath];
@@ -86,8 +87,8 @@
 	[outline stroke];
 }
 
--(void)drawBottomBorder:(NSRect)aRect 
-{
+-(void)drawBottomBorder:(NSRect)aRect {
+    
 	float maxX = aRect.size.width;
 	NSBezierPath *line = [NSBezierPath bezierPath];
 	
@@ -102,8 +103,8 @@
 	[line stroke];
 }
 
--(void)drawTopBorder:(NSRect)aRect 
-{
+-(void)drawTopBorder:(NSRect)aRect  {
+    
 	float maxX = aRect.size.width;
 	float maxY = aRect.size.height;
 	NSBezierPath *line = [NSBezierPath bezierPath];

@@ -97,6 +97,20 @@
 #pragma mark -
 #pragma mark Drawing
 
+- (void) drawMidlineInRect:(NSRect)aRect {
+    
+    NSBezierPath *line = [NSBezierPath bezierPath];
+    
+    [line moveToPoint:NSMakePoint(aRect.origin.x - 24, 
+                                  aRect.origin.y + aRect.size.height/2)];
+    [line lineToPoint:NSMakePoint(NSMaxX(aRect), 
+                                  aRect.origin.y + aRect.size.height/2)];
+    
+    [[[NSColor blackColor] colorWithAlphaComponent:0.25] set];
+    [line setLineWidth:1.0];
+    [line stroke];  
+}
+
 - (void)drawInContext:(CGContextRef)theContext {
 	
 	CGFloat anEnabledAlpha = [self isEnabled] ? 1.0 : 0.4;
@@ -155,17 +169,8 @@
 	}	
     
     if (self.doDrawMidline) {
-        
-        NSBezierPath *line = [NSBezierPath bezierPath];
-        
-        [line moveToPoint:NSMakePoint(aGradientRect.origin.x - 24, 
-                                      aGradientRect.origin.y + aGradientRect.size.height/2)];
-        [line lineToPoint:NSMakePoint(NSMaxX(aGradientRect), 
-                                      aGradientRect.origin.y + aGradientRect.size.height/2)];
-        
-        [[NSColor blackColor] set];
-        [line setLineWidth:1.0];
-        [line stroke];
+
+        [self drawMidlineInRect:aGradientRect];
     }
 }
 
@@ -214,7 +219,7 @@
 	if(NSPointInRect(aMousePoint, aGradientRect))
 	{
 		// gotta convert the point so that it's in the gradient rect
-		CGFloat aNewStopLocation = ((aMousePoint.x-.5-aGradientRect.origin.x)/aGradientRect.size.width);
+		CGFloat aNewStopLocation = ((aMousePoint.y-.5-aGradientRect.origin.y)/aGradientRect.size.height);
 		[self makeNewStopAtLocation:aNewStopLocation];
 		return;
 	}
@@ -256,49 +261,50 @@
 
 - (void) mouseDragged:(NSEvent*)theEvent {
     
-	if(_activeColorStop != NSNotFound 
-       &&  _activeColorStop != 0
-       &&	_activeColorStop != [_gradientValue numberOfColorStops]-1)
-	{
+	if(_activeColorStop != NSNotFound &&
+       _activeColorStop != 0 &&
+       _activeColorStop != [_gradientValue numberOfColorStops]-1) {
+        
 		NSPoint aMousePoint = [self convertPoint:[theEvent locationInWindow] fromView:nil]; 
 		
 		CGFloat aLocationOfActiveStop;
 		[_gradientValue getColor:nil location:&aLocationOfActiveStop atIndex:_activeColorStop];
-		if(		_mouseDragState == kKTGradientPickerMouseDragState_NoDrag
-           &&	NSPointInRect(aMousePoint, [self rectForStopAtLocation:aLocationOfActiveStop]))
-		{
+        
+		if( _mouseDragState == kKTGradientPickerMouseDragState_NoDrag &&	
+           NSPointInRect(aMousePoint, [self rectForStopAtLocation:aLocationOfActiveStop])) {
+            
 			_mouseDragState = kKTGradientPickerMouseDragState_DraggingColorStop;
-			
 		}
-		else if(_mouseDragState == kKTGradientPickerMouseDragState_DraggingColorStop)
-		{
+		else if(_mouseDragState == kKTGradientPickerMouseDragState_DraggingColorStop) {
+            
 			NSRect aGradientRect = [self gradientRect];
 			[self moveStopAtIndex:_activeColorStop toLocation:((aMousePoint.y-.5-aGradientRect.origin.y)/aGradientRect.size.height)];
 		}
 	}
 }
 
-- (void)mouseUp:(NSEvent*)theEvent
-{
-	if(_mouseDragState != kKTGradientPickerMouseDragState_NoDrag)
-	{
-		if(_removeActiveColorStop)
-		{
+- (void)mouseUp:(NSEvent*)theEvent {
+    
+	if(_mouseDragState != kKTGradientPickerMouseDragState_NoDrag) {
+        
+		if(_removeActiveColorStop) {
+            
 			[self removeStopAtIndex:_activeColorStop];
 			[[NSCursor arrowCursor] set];
 		}
+        
 		_mouseDragState = kKTGradientPickerMouseDragState_NoDrag;
 	}
     
 	[self setNeedsDisplay:YES];
 }
 
-- (void)keyDown:(NSEvent*)theEvent
-{
+- (void)keyDown:(NSEvent*)theEvent {
+    
 	unichar aKey = [[theEvent characters] characterAtIndex:0];
     
-	switch(aKey)
-	{
+	switch(aKey) {
+            
 		case NSBackTabCharacter:
             if(_activeColorStop==NSNotFound)
                 _activeColorStop=[_gradientValue numberOfColorStops]-1;
@@ -334,12 +340,11 @@
 #pragma mark -
 #pragma mark Manipulating the gradient
 
-- (void)moveStopAtIndex:(NSInteger)theIndex toLocation:(CGFloat)theLocation
-{
+- (void)moveStopAtIndex:(NSInteger)theIndex toLocation:(CGFloat)theLocation {
+    
 	// double check we aren't trying to move the first or last stop
-	if(		theIndex==0
-       ||	theIndex==[_gradientValue numberOfColorStops]-1)
-		return;
+	if( theIndex==0 ||	
+       theIndex==[_gradientValue numberOfColorStops]-1) return;
     
 	// check the location of the stop before and after this stop
 	// if they are on top of each other, remove the active stop
@@ -347,27 +352,28 @@
 	[_gradientValue getColor:nil location:&aLocationOfPreviousStop atIndex:_activeColorStop-1];
 	[_gradientValue getColor:nil location:&aLocationOfNextStop atIndex:_activeColorStop+1];
 	
-	if(		theLocation<=aLocationOfPreviousStop
-       ||	theLocation>=aLocationOfNextStop )
-	{
+	if(theLocation <= aLocationOfPreviousStop ||	
+       theLocation >= aLocationOfNextStop ) {
+        
 		// on mouse up remove this stop
 		_removeActiveColorStop = YES;
 		[[NSCursor disappearingItemCursor] set];
 		return;
 	}
-	else
-	{
+	else {
+        
 		_removeActiveColorStop = NO;
 		[[NSCursor arrowCursor] set];
-	}		
+	}	
+	
 	NSInteger			aNumberOfStops = [_gradientValue numberOfColorStops];
 	NSMutableArray *	aCurrentColorList = [[[NSMutableArray alloc] init] autorelease];
 	CGFloat				aCurrentLocationList[aNumberOfStops];
     
 	// build lists of current stops and locations
 	NSInteger i;
-	for(i = 0; i < aNumberOfStops; i++)
-	{
+	for(i = 0; i < aNumberOfStops; i++) {
+        
 		NSColor *	aStopColor = nil;	
 		CGFloat		aLocation = 0;
 		[_gradientValue getColor:&aStopColor location:&aLocation atIndex:i];
@@ -377,7 +383,9 @@
 		else
 			aCurrentLocationList[i]=aLocation;
 	}
+    
 	NSGradient * aNewGradient = [[[NSGradient alloc] initWithColors:aCurrentColorList atLocations:aCurrentLocationList colorSpace:[NSColorSpace genericRGBColorSpace]]autorelease];
+    
 	[self setGradientValue:aNewGradient];
 }
 
@@ -395,8 +403,8 @@
 	
 	// build lists of current stops and locations
 	NSInteger i;
-	for(i = 0; i < aNumberOfStops; i++)
-	{
+	for(i = 0; i < aNumberOfStops; i++) {
+        
 		NSColor *	aStopColor = nil;	
 		CGFloat		aLocation = 0;
 		[_gradientValue getColor:&aStopColor location:&aLocation atIndex:i];
@@ -406,19 +414,20 @@
 	
 	// go through the locations and find the spot to insert
 	int j = 0;
-	for(i = 0; i < aNumberOfStops; i++)
-	{
-		if(		aFoundSpotForNewStop==NO
-           &&	aCurrentLocationList[i]>theLocation)
-		{
+	for(i = 0; i < aNumberOfStops; i++) {
+        
+		if(aFoundSpotForNewStop == NO &&	
+           aCurrentLocationList[i] > theLocation) {
+            
 			aNewLocationList[i]=theLocation;
 			_activeColorStop = i;
 			[aNewColorList addObject:[NSColor whiteColor]];
 			aFoundSpotForNewStop = YES;
 			j++;
 		}
+        
 		[aNewColorList addObject:[aCurrentColorList objectAtIndex:i]];
-		aNewLocationList[i+j]=aCurrentLocationList[i];	
+		aNewLocationList[i+j] = aCurrentLocationList[i];	
 	}
 	
 	NSGradient * aNewGradient = [[[NSGradient alloc] initWithColors:aNewColorList atLocations:aNewLocationList colorSpace:[NSColorSpace genericRGBColorSpace]]autorelease];
@@ -428,8 +437,8 @@
 - (void)removeStopAtIndex:(NSInteger)theIndex {
 	
 	NSInteger aNumberOfStops = [_gradientValue numberOfColorStops];
-	if(theIndex<=0 || theIndex>=aNumberOfStops-1)
-		return;
+    
+	if(theIndex <= 0 || theIndex >= aNumberOfStops-1) return;
 	
 	NSMutableArray * aColorList = [[[NSMutableArray alloc] init] autorelease];
 	CGFloat aLocationList[aNumberOfStops-1];
@@ -437,8 +446,8 @@
 	// rebuild the list from current gradient, skipping index from argument
 	NSInteger i;
 	NSInteger j = 0;
-	for(i = 0; i < aNumberOfStops; i++)
-	{
+	for(i = 0; i < aNumberOfStops; i++) {
+        
 		if(i!=theIndex) {
             
 			NSColor * aStopColor = nil;	
@@ -451,6 +460,7 @@
 	}
 	
 	NSGradient * aNewGradient = [[[NSGradient alloc] initWithColors:aColorList atLocations:aLocationList colorSpace:[NSColorSpace genericRGBColorSpace]]autorelease];
+    
 	[self setGradientValue:aNewGradient];
 }
 
@@ -465,16 +475,18 @@
 
 - (void)setGradientValue:(NSGradient*)theGradient {
     
-	if(_gradientValue != theGradient)
-	{
+	if(_gradientValue != theGradient) {
+        
 		[_gradientValue release];
+        
 		if(theGradient==nil)
 			_gradientValue = [[NSGradient alloc] initWithStartingColor:[NSColor whiteColor] endingColor:[NSColor blackColor]];
-		else
-		{
+		else {
+            
 			_gradientValue = [theGradient retain];
 			[self performAction];
 		}
+        
 		[self setNeedsDisplay:YES];
 	}
 }
@@ -483,8 +495,8 @@
 #pragma mark -
 #pragma mark NSColorPanel
 
-- (IBAction)changeColor:(id)theSender
-{
+- (IBAction)changeColor:(id)theSender {
+    
 	if(_activeColorStop == NSNotFound)
 		return;
     
@@ -495,8 +507,8 @@
 	CGFloat				aLocationList[aNumberOfStops];
 	
 	NSInteger i;
-	for(i = 0; i < aNumberOfStops; i++)
-	{
+	for(i = 0; i < aNumberOfStops; i++)	{
+        
 		NSColor *	aStopColor = nil;	
 		CGFloat		aLocation = 0;
 		
@@ -508,6 +520,7 @@
 	}
 	
 	NSGradient * aGradient = [[[NSGradient alloc] initWithColors:aColorList atLocations:aLocationList colorSpace:[NSColorSpace genericRGBColorSpace]]autorelease];
+    
 	[self setGradientValue:aGradient];
 }
 
@@ -529,8 +542,8 @@
 
 - (void)recursiveDeactivateColorWellsInViews:(NSArray*)theViews
 {
-	for(NSView * aView in theViews)
-	{
+	for(NSView * aView in theViews) {
+        
 		if([[aView subviews] count] > 0)
 			[self recursiveDeactivateColorWellsInViews:[aView subviews]];
 		if([aView isKindOfClass:[NSColorWell class]])
@@ -542,8 +555,8 @@
 #pragma mark -
 #pragma mark Drawing/HitTest Rect Overrides
 
-- (NSRect)gradientRect
-{
+- (NSRect) gradientRect {
+    
 	NSRect aViewRect = [self bounds];
 	aViewRect.size.width -= 2;
 	aViewRect.size.height -= 2;
@@ -559,8 +572,8 @@
 	return aGradientRect;
 }
 
-- (NSRect)rectForStopAtLocation:(CGFloat)theLocation
-{
+- (NSRect) rectForStopAtLocation:(CGFloat)theLocation {
+    
 	NSRect aStopRect;
 	NSRect aGradientRect = [self gradientRect];
 	aStopRect.size = NSMakeSize(kStopControlSize, kStopControlSize);
