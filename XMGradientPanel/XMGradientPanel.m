@@ -154,6 +154,8 @@ static XMGradientPanel *sharedGradientPanel = nil;
     [[NSNotificationCenter defaultCenter]
      postNotificationName: XMGradientPanelGradientChangedNotification
      object: (id)self];
+    
+    [swatch setGradient:self.gradient];
 }
 
 - (void) deactivateOtherWells:(id)sender {
