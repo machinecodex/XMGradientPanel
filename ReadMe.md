@@ -14,13 +14,13 @@ Our goal is to fill this gap with a standard, open-source set of control views, 
 
 The aim is to make a flexible panel that can support multiple picker views. At present, there is a single linear picker view.
 
-XMGradientPanel manages a set of preset gradients in a file in your app's Application Support folder.
+`XMGradientWell` creates and manages an application's shared gradient panel. It also supports drag-and-drop of `NSGradient` objects between wells.
 
-XMGradientWell supports drag-and-drop of NSGradient objects.
+`XMGradientPanel`, a subclass of `NSPanel`, hosts the picker view. It also manages a set of preset gradients which are stored in a file in your app's Application Support folder.
 
-XMGradientPicker is an abstract picker superclass that can be subclassed to create new pickers. This aspect of the project needs more work.
+`XMGradientPicker` is an abstract picker superclass that can be subclassed to create new pickers.
 
-XMGradientPickerLinear is the concrete picker subclass used by XMGradientPanel at present.
+`XMGradientPickerLinear` is the concrete picker subclass currently used by XMGradientPanel.
 
 Setup
 -----
