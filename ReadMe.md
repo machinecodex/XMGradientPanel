@@ -10,13 +10,17 @@ Introduction
 
 Cocoa has offered the very useful `NSGradient` class since Leopard, but we still have no standard way to present a picker UI so users can choose a gradient in a standard way, analagous to `NSColorPanel` and `NSColorWell`. 
 
-Our goal is to fill this gap with a standard, open-source set of control views, including a well, a picker and a panel. These controls use target-action style methods to pass a gradient back to you.
+Our goal is to fill this gap with a standard, open-source set of control views, including a well,  a panel and pickers. These controls use target-action style methods to pass a gradient back to you.
 
 The aim is to make a flexible panel that can support multiple picker views. At present, there is a single linear picker view.
 
-XMGradientPanel also stores a set of preset gradients in a file in the Application Support folder.
+XMGradientPanel manages a set of preset gradients in a file in your app's Application Support folder.
 
-Please feel free to contribute!
+XMGradientWell supports drag-and-drop of NSGradient objects.
+
+XMGradientPicker is an abstract picker superclass that can be subclassed to create new pickers. This aspect of the project needs more work.
+
+XMGradientPickerLinear is the concrete picker subclass used by XMGradientPanel at present.
 
 Setup
 -----
