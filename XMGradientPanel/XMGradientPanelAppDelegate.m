@@ -22,6 +22,11 @@
     
     [gradientWell setTarget:self];
     [gradientWell setAction:@selector(setGradient:)];
+    
+    [gradientTypeMatrix selectCellWithTag:[self gradientType]];
+    
+    [gradientWell activate:YES];
+    [gradientWell performSelector:@selector(activatePanel)];
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -38,5 +43,16 @@
 
     [gradientView setGradientAngle:[sender doubleValue]];
 }
+
+- (IBAction) setGradientType:(id)sender {
+    
+    [gradientView setGradientType:[[sender selectedCell] tag]];
+}
+
+- (NSInteger) gradientType {
+    
+    return [gradientView gradientType];
+}
+
 
 @end

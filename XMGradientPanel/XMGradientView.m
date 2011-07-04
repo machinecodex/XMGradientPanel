@@ -29,6 +29,7 @@
 
 @synthesize gradient = _gradient;
 @synthesize gradientAngle = _gradientAngle;
+@synthesize gradientType = _gradientType;
 
 @synthesize doesDrawOutline = _doesDrawOutline;
 @synthesize doesDrawBottomBorder = _doesDrawBottomBorder;
@@ -48,8 +49,9 @@
         
 		self.outlineColor = [NSColor colorWithCalibratedWhite:0.25 alpha:1.0];
 		self.gradient = [NSGradient inverseGlossyGradient];
+        self.gradientType = XMGradientViewGradientType_Linear;
         
-        _gradientAngle = 90.0f;
+        _gradientAngle = 0.0f;
 		_doesDrawOutline = YES;
 		_doesDrawTopBorder = NO;
 		_doesDrawBottomBorder = NO;
@@ -73,8 +75,24 @@
 	
 	[super drawRect:[self bounds]];
 	
-	[self.gradient drawInRect:[self bounds] angle:self.gradientAngle];
-	
+    switch (self.gradientType) {
+            
+        case XMGradientViewGradientType_Linear: {
+            
+            [self.gradient drawInRect:[self bounds] angle:self.gradientAngle];
+            break;
+        }
+            
+        case XMGradientViewGradientType_Radial: {
+            
+            [self.gradient drawInRect:[self bounds] relativeCenterPosition:NSMakePoint(0, 0)];
+            break;
+        }
+     
+        default:
+            break;
+    }
+    
     [self drawOutline:[self bounds]];
     
     [self drawLeftBorder:[self bounds]];
@@ -210,6 +228,17 @@
 - (void) setGradientAngle:(CGFloat)aGradientAngle {
     
     _gradientAngle = aGradientAngle;
+    [self update:self];
+}
+
+- (NSInteger) gradientType {
+    
+    return _gradientType;
+}
+
+- (void) setGradientType:(NSInteger)aGradientType {
+    
+    _gradientType = aGradientType;
     [self update:self];
 }
 

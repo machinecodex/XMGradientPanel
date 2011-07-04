@@ -17,10 +17,15 @@
     
     IBOutlet XMGradientView * gradientView;
     IBOutlet XMGradientWell * gradientWell;
+    IBOutlet NSMatrix * gradientTypeMatrix;
 }
 
 @property (strong) IBOutlet NSWindow *window;
 
 - (IBAction) setGradient:(id)sender;
+- (IBAction) setGradientAngle:(id)sender;
+- (IBAction) setGradientType:(id)sender;
+
+- (NSInteger) gradientType;
 
 @end

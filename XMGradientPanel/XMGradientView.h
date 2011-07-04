@@ -8,6 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+typedef enum {
+    
+	XMGradientViewGradientType_Linear = 0,
+	XMGradientViewGradientType_Radial = 1
+	
+} XMGradientViewGradientType;
+
+
 @interface XMGradientView : NSView {
 	
 	BOOL _doesDrawOutline;
@@ -20,6 +28,9 @@
 	
 	NSGradient * _gradient;
     CGFloat _gradientAngle;
+    NSInteger _gradientStyle;
+    
+    NSInteger _gradientType;
 }
 
 @property (nonatomic, assign) BOOL doesDrawOutline;
@@ -32,6 +43,7 @@
 
 @property (nonatomic, retain) NSGradient *gradient;
 @property (assign) CGFloat gradientAngle;
+@property (assign) NSInteger gradientType;
 
 @end
 

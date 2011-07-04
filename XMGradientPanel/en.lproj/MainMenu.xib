@@ -1324,7 +1324,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {480, 360}}</string>
 				<int key="NSWTFlags">1954021376</int>
-				<string key="NSWindowTitle">XMGradientPanel</string>
+				<string key="NSWindowTitle">Gradient Viewer</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<object class="NSView" key="NSWindowView" id="439893737">
@@ -1338,7 +1338,7 @@
 							<string key="NSFrame">{{20, 316}, {24, 24}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="499019706"/>
+							<reference key="NSNextKeyView" ref="509486589"/>
 							<string key="NSClassName">XMGradientWell</string>
 						</object>
 						<object class="NSCustomView" id="219030866">
@@ -1347,10 +1347,10 @@
 							<string key="NSFrame">{{87, 45}, {373, 295}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="754002960"/>
+							<reference key="NSNextKeyView" ref="714994467"/>
 							<string key="NSClassName">XMGradientView</string>
 						</object>
-						<object class="NSSlider" id="754002960">
+						<object class="NSSlider" id="714994467">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{85, 20}, {377, 17}}</string>
@@ -1358,14 +1358,14 @@
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSSliderCell" key="NSCell" id="64754518">
+							<object class="NSSliderCell" key="NSCell" id="518837910">
 								<int key="NSCellFlags">-2079981824</int>
 								<int key="NSCellFlags2">131072</int>
 								<string key="NSContents"/>
-								<reference key="NSControlView" ref="754002960"/>
-								<double key="NSMaxValue">180</double>
+								<reference key="NSControlView" ref="714994467"/>
+								<double key="NSMaxValue">360</double>
 								<double key="NSMinValue">0.0</double>
-								<double key="NSValue">90</double>
+								<double key="NSValue">0.0</double>
 								<double key="NSAltIncValue">0.0</double>
 								<int key="NSNumberOfTickMarks">5</int>
 								<int key="NSTickMarkPosition">0</int>
@@ -1373,19 +1373,20 @@
 								<bool key="NSVertical">NO</bool>
 							</object>
 						</object>
-						<object class="NSMatrix" id="499019706">
+						<object class="NSMatrix" id="509486589">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{18, 270}, {61, 38}}</string>
+							<string key="NSFrame">{{20, 45}, {59, 38}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="219030866"/>
+							<bool key="NSEnabled">YES</bool>
 							<int key="NSNumRows">2</int>
 							<int key="NSNumCols">1</int>
 							<object class="NSMutableArray" key="NSCells">
 								<bool key="EncodedWithXMLCoder">YES</bool>
-								<object class="NSButtonCell" id="23856019">
-									<int key="NSCellFlags">-1543373312</int>
+								<object class="NSButtonCell" id="674850286">
+									<int key="NSCellFlags">-2080244224</int>
 									<int key="NSCellFlags2">131072</int>
 									<string key="NSContents">Linear</string>
 									<object class="NSFont" key="NSSupport" id="26">
@@ -1393,11 +1394,10 @@
 										<double key="NSSize">11</double>
 										<int key="NSfFlags">3100</int>
 									</object>
-									<reference key="NSControlView" ref="499019706"/>
-									<int key="NSTag">1</int>
+									<reference key="NSControlView" ref="509486589"/>
 									<int key="NSButtonFlags">1211912703</int>
 									<int key="NSButtonFlags2">0</int>
-									<object class="NSButtonImageSource" key="NSAlternateImage" id="28734782">
+									<object class="NSButtonImageSource" key="NSAlternateImage" id="777545662">
 										<string key="NSImageName">NSRadioButton</string>
 									</object>
 									<string key="NSAlternateContents"/>
@@ -1405,12 +1405,13 @@
 									<int key="NSPeriodicDelay">200</int>
 									<int key="NSPeriodicInterval">25</int>
 								</object>
-								<object class="NSButtonCell" id="28997869">
-									<int key="NSCellFlags">604110336</int>
+								<object class="NSButtonCell" id="449719783">
+									<int key="NSCellFlags">67239424</int>
 									<int key="NSCellFlags2">131072</int>
 									<string key="NSContents">Radial</string>
 									<reference key="NSSupport" ref="26"/>
-									<reference key="NSControlView" ref="499019706"/>
+									<reference key="NSControlView" ref="509486589"/>
+									<int key="NSTag">1</int>
 									<int key="NSButtonFlags">1211912703</int>
 									<int key="NSButtonFlags2">0</int>
 									<object class="NSImage" key="NSNormalImage">
@@ -1504,22 +1505,22 @@ QXBwbGUgQ29tcHV0ZXIsIEluYy4sIDIwMDUAAAAAA</bytes>
 												</object>
 											</object>
 										</object>
-										<object class="NSColor" key="NSColor" id="691115116">
+										<object class="NSColor" key="NSColor" id="322226983">
 											<int key="NSColorSpace">3</int>
 											<bytes key="NSWhite">MCAwAA</bytes>
 										</object>
 									</object>
-									<reference key="NSAlternateImage" ref="28734782"/>
+									<reference key="NSAlternateImage" ref="777545662"/>
 									<int key="NSPeriodicDelay">400</int>
 									<int key="NSPeriodicInterval">75</int>
 								</object>
 							</object>
-							<string key="NSCellSize">{61, 18}</string>
+							<string key="NSCellSize">{59, 18}</string>
 							<string key="NSIntercellSpacing">{4, 2}</string>
 							<int key="NSMatrixFlags">1143480320</int>
 							<string key="NSCellClass">NSActionCell</string>
-							<object class="NSButtonCell" key="NSProtoCell" id="969434953">
-								<int key="NSCellFlags">604110336</int>
+							<object class="NSButtonCell" key="NSProtoCell" id="617232664">
+								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">131072</int>
 								<string key="NSContents">Radio</string>
 								<reference key="NSSupport" ref="26"/>
@@ -1564,13 +1565,13 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 											</object>
 										</object>
 									</object>
-									<reference key="NSColor" ref="691115116"/>
+									<reference key="NSColor" ref="322226983"/>
 								</object>
-								<reference key="NSAlternateImage" ref="28734782"/>
+								<reference key="NSAlternateImage" ref="777545662"/>
 								<int key="NSPeriodicDelay">400</int>
 								<int key="NSPeriodicInterval">75</int>
 							</object>
-							<reference key="NSSelectedCell" ref="23856019"/>
+							<reference key="NSSelectedCell" ref="674850286"/>
 							<object class="NSColor" key="NSBackgroundColor">
 								<int key="NSColorSpace">6</int>
 								<string key="NSCatalogName">System</string>
@@ -1605,7 +1606,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 			<object class="NSCustomObject" id="755631768">
 				<string key="NSClassName">NSFontManager</string>
 			</object>
-			<object class="NSUserDefaultsController" id="790940535">
+			<object class="NSUserDefaultsController" id="621295631">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
@@ -2312,9 +2313,37 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<object class="IBActionConnection" key="connection">
 						<string key="label">setGradientAngle:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="754002960"/>
+						<reference key="destination" ref="714994467"/>
 					</object>
 					<int key="connectionID">545</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">setGradientType:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="509486589"/>
+					</object>
+					<int key="connectionID">550</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: gradientType</string>
+						<reference key="source" ref="714994467"/>
+						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="714994467"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">enabled: gradientType</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">gradientType</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">554</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2874,9 +2903,9 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="219030866"/>
-							<reference ref="754002960"/>
+							<reference ref="714994467"/>
 							<reference ref="595947140"/>
-							<reference ref="499019706"/>
+							<reference ref="509486589"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -3378,48 +3407,48 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">540</int>
-						<reference key="object" ref="754002960"/>
+						<reference key="object" ref="714994467"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="64754518"/>
+							<reference ref="518837910"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">541</int>
-						<reference key="object" ref="64754518"/>
-						<reference key="parent" ref="754002960"/>
+						<reference key="object" ref="518837910"/>
+						<reference key="parent" ref="714994467"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">542</int>
-						<reference key="object" ref="790940535"/>
+						<reference key="object" ref="621295631"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">546</int>
-						<reference key="object" ref="499019706"/>
+						<reference key="object" ref="509486589"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="969434953"/>
-							<reference ref="23856019"/>
-							<reference ref="28997869"/>
+							<reference ref="617232664"/>
+							<reference ref="674850286"/>
+							<reference ref="449719783"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">547</int>
-						<reference key="object" ref="969434953"/>
-						<reference key="parent" ref="499019706"/>
+						<reference key="object" ref="617232664"/>
+						<reference key="parent" ref="509486589"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">548</int>
-						<reference key="object" ref="23856019"/>
-						<reference key="parent" ref="499019706"/>
+						<reference key="object" ref="674850286"/>
+						<reference key="parent" ref="509486589"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">549</int>
-						<reference key="object" ref="28997869"/>
-						<reference key="parent" ref="499019706"/>
+						<reference key="object" ref="449719783"/>
+						<reference key="parent" ref="509486589"/>
 					</object>
 				</object>
 			</object>
@@ -3770,7 +3799,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">549</int>
+			<int key="maxID">554</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3846,26 +3875,56 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 					<string key="className">XMGradientPanelAppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">setGradient:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>setGradient:</string>
+							<string>setGradientAngle:</string>
+							<string>setGradientType:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">setGradient:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">setGradient:</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>setGradient:</string>
+							<string>setGradientAngle:</string>
+							<string>setGradientType:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">setGradient:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">setGradientAngle:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">setGradientType:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>gradientTypeMatrix</string>
 							<string>gradientView</string>
 							<string>gradientWell</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSMatrix</string>
 							<string>XMGradientView</string>
 							<string>XMGradientWell</string>
 							<string>NSWindow</string>
@@ -3875,12 +3934,17 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>gradientTypeMatrix</string>
 							<string>gradientView</string>
 							<string>gradientWell</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">gradientTypeMatrix</string>
+								<string key="candidateClassName">NSMatrix</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">gradientView</string>
 								<string key="candidateClassName">XMGradientView</string>
