@@ -1,18 +1,18 @@
 XMGradientPanel
 ==============
 
-A drop-in Gradient Panel for Mac apps that works much like NSColorPanel.
+A drop-in Gradient Panel for Mac apps.
 
 ![XMGradientPanel](http://www.machinecodex.com/media/XMGradientPanel.png)
 
 Introduction
 ----------------
 
-Cocoa has offered the very useful `NSGradient` class since Leopard, but we still have no standard way to present a picker UI so users can choose a gradient in a standard way, analagous to `NSColorPanel` and `NSColorWell`. 
+Cocoa has offered the very useful `NSGradient` class since Leopard - but we still have no standard way to present a picker UI so users can select a gradient. Ideally, a gradient picker should work similarly to an `NSColorPanel` to conform to Mac OS X conventions. 
 
-Our goal is to fill this gap with a standard, open-source set of control views, including a well,  a panel and pickers. These controls use target-action style methods to pass a gradient back to you.
+Our goal is to fill this gap with a standard, open-source set of gradient control views, including a well, a panel and a picker. These controls use target-action based interfaces to pass an `NSGradient` back to your app.
 
-The aim is to make a flexible panel that can support multiple picker views. At present, there is a single linear picker view.
+The aim is to make a flexible panel that can support multiple picker views. At present, there is a linear picker view (pictured above).
 
 `XMGradientWell` creates and manages an application's shared gradient panel. It also supports drag-and-drop of `NSGradient` objects between wells.
 
