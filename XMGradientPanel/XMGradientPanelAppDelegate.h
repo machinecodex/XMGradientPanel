@@ -20,7 +20,7 @@
     IBOutlet NSMatrix * gradientTypeMatrix;
 }
 
-@property (strong) IBOutlet NSWindow *window;
+@property (retain) IBOutlet NSWindow *window;
 
 - (IBAction) setGradient:(id)sender;
 - (IBAction) setGradientAngle:(id)sender;
