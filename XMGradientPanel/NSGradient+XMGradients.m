@@ -11,6 +11,10 @@
 
 @implementation NSGradient (XMGradients)
 
+
+#pragma mark -
+#pragma mark Convenience constructors
+
 + (id) gradientFromColor:(NSColor *)color1 toColor:(NSColor *)color2 {
 	
 	CGFloat position1 = 0;
@@ -44,6 +48,10 @@
 	
 	return [newInstance autorelease];   
 }
+
+
+#pragma mark -
+#pragma mark Convenience gradients
 
 + (NSGradient *) simpleGradient {
     
@@ -212,6 +220,31 @@
 					  nil];
 	
 	return [newInstance autorelease];
+}
+
+
+#pragma mark -
+#pragma mark Utility methods
+
++ (NSGradient *) reverseGradient:(NSGradient *)inGradient {
+    
+	NSInteger			aNumberOfStops = [inGradient numberOfColorStops];
+	NSMutableArray *	aColorList = [NSMutableArray array];
+	CGFloat				aLocationList[aNumberOfStops];
+	
+	NSInteger i;
+	for(i = aNumberOfStops - 1; i >= 0; i--)	{
+        
+		NSColor *	aStopColor = nil;	
+		CGFloat		aLocation = 0;
+		
+		[inGradient getColor:&aStopColor location:&aLocation atIndex:i];
+		[aColorList addObject:aStopColor];
+		aLocationList[i] = aLocation;
+	}
+    
+	NSGradient * outGradient = [[[NSGradient alloc] initWithColors:aColorList atLocations:aLocationList colorSpace:[NSColorSpace genericRGBColorSpace]]autorelease];
+    return outGradient;
 }
 
 @end
