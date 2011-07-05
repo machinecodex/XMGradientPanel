@@ -55,7 +55,6 @@ static XMGradientPanel *sharedGradientPanel = nil;
 
 
 #pragma mark -
-#pragma mark Setup
 
 @synthesize picker = _picker;
 @synthesize isContinuous = _isContinuous;
@@ -64,8 +63,10 @@ static XMGradientPanel *sharedGradientPanel = nil;
 @synthesize gradient = _gradient;
 @synthesize splitView;
 @synthesize swatchWellsView;
-@synthesize swatch;
+@synthesize previewSwatch;
 
+
+#pragma mark - Setup
 
 - (id)init {
     
@@ -116,10 +117,10 @@ static XMGradientPanel *sharedGradientPanel = nil;
     [self restoreGradientWells];
 }
 
-- (void) setupSwatch {
+- (void) setupPreviewSwatch {
     
-    [swatch setIsSwatch:YES];
-    [swatch setGradient:self.gradient];
+    [previewSwatch setIsSwatch:YES];
+    [previewSwatch setGradient:self.gradient];
 }
 
 - (void) awakeFromNib {
@@ -131,12 +132,15 @@ static XMGradientPanel *sharedGradientPanel = nil;
     
     _picker.gradientValue = self.gradient;
     
-    [self setupSwatch];
+    [self setupPreviewSwatch];
     [self setupSwatchWellsInView:self.swatchWellsView];
 }
 
 - (void)dealloc
 {
+    [_picker release]; _picker = nil;
+    [_gradient release]; _gradient = nil;
+    
     [super dealloc];
 }
 
@@ -155,7 +159,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
      postNotificationName: XMGradientPanelGradientChangedNotification
      object: (id)self];
     
-    [swatch setGradient:self.gradient];
+    [previewSwatch setGradient:self.gradient];
 }
 
 - (void) deactivateOtherWells:(id)sender {
@@ -171,39 +175,12 @@ static XMGradientPanel *sharedGradientPanel = nil;
     return YES;
 }
 
-
-#pragma mark -
-#pragma mark PasteBoard support
-
-//+ (BOOL) dragGradient: (NSGradient *)aGradient
-//         withEvent: (NSEvent *)anEvent
-//          fromView: (NSView *)sourceView
-//{
-//    NSPasteboard	*pb = [NSPasteboard pasteboardWithName: NSDragPboard];
-//    NSImage	*image = [NSImage imageNamed: @"common_ColorSwatch"];
-//    NSSize	size;
-//    NSPoint	point;
-//    
-//    [pb declareTypes: [NSArray arrayWithObjects: NSColorPboardType, nil]
-//               owner: aColor];
-//    [aColor writeToPasteboard: pb];
-//    [image setBackgroundColor: aColor];
-//    
-//    size = [image size];
-//    point = [sourceView convertPoint: [anEvent locationInWindow] fromView: nil];
-//    point.x -= size.width/2;
-//    point.y -= size.width/2;
-//    
-//    [sourceView dragImage: image
-//                       at: point
-//                   offset: NSMakeSize(0,0)
-//                    event: anEvent
-//               pasteboard: pb
-//                   source: sourceView
-//                slideBack: NO];
+- (IBAction) reverseGradient:(id)sender {
     
-//    return YES;
-//}
+    NSGradient * reverse = [NSGradient reverseGradient:self.gradient];
+    self.gradient = reverse;
+}
+
 
 #pragma mark -
 #pragma mark Dynamic Accessors
@@ -223,7 +200,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
     }
         
     [_picker setGradientValue:aGradient];
-    [swatch setGradient:self.gradient];
+    [previewSwatch setGradient:self.gradient];
     
     if (_isContinuous && (_action) && (_target != nil))
         [self performAction];  
@@ -232,18 +209,6 @@ static XMGradientPanel *sharedGradientPanel = nil;
      postNotificationName: XMGradientPanelGradientChangedNotification
      object: (id)self];
 }
-
-//- (void) encodeWithCoder: (NSCoder*)aCoder
-//{
-//    [super encodeWithCoder: aCoder];
-//}
-//
-//- (id) initWithCoder: (NSCoder*)aDecoder
-//{
-//    [super initWithCoder: aDecoder];
-//    
-//    return self;
-//}
 
 
 #pragma mark -
@@ -266,8 +231,7 @@ static XMGradientPanel *sharedGradientPanel = nil;
 
 
 #pragma mark -
-#pragma mark -
-#pragma mark Gradient List 
+#pragma mark - Gradient List 
 
 #import "XMApplicationSupport.h"
 

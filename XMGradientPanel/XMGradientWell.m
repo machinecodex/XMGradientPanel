@@ -182,7 +182,8 @@
 
 - (void) mouseDragged:(NSEvent *)event {
     
-    NSPoint location = [event locationInWindow];
+//    NSPoint location = [event locationInWindow];
+    NSPoint location = [self bounds].origin;
     NSSize offset = NSZeroSize;
     NSSize size;
     

@@ -18,14 +18,13 @@
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-    [gradientWell setGradient:[NSGradient inverseGlossyGradient]];
+    [gradientWell setGradient:[NSGradient spectrumGradient]];
     
     [gradientWell setTarget:self];
     [gradientWell setAction:@selector(setGradient:)];
     
     [gradientTypeMatrix selectCellWithTag:[self gradientType]];
     
-    [gradientWell activate:YES];
     [gradientWell performSelector:@selector(activatePanel)];
 }
 

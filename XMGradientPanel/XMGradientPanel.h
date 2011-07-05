@@ -20,26 +20,28 @@
     
     NSSplitView * splitView;
     NSView * swatchWellsView;
-    XMGradientWell * swatch;
+    XMGradientWell * previewSwatch;
     
     BOOL _isContinuous;
     SEL _action;
-    id target;
+    id _target;
 }
 
 + (XMGradientPanel *)sharedGradientPanel;
 + (BOOL)sharedGradientPanelExists;
 
+@property (nonatomic, retain) NSGradient * gradient;
 @property (retain) IBOutlet XMGradientPicker * picker;
-@property (retain) IBOutlet XMGradientWell * swatch;
+@property (retain) IBOutlet XMGradientWell * previewSwatch;
 @property (assign) IBOutlet NSSplitView * splitView;
 @property (assign) IBOutlet NSView * swatchWellsView;
 @property (assign) BOOL isContinuous;
 @property (assign) SEL action;
 @property (assign) id target;
-@property (nonatomic, retain) NSGradient * gradient;
 
 - (void) deactivateOtherWells:(id)sender;
+
+- (IBAction) reverseGradient:(id)sender;
 
 @end
 
