@@ -38,15 +38,14 @@ Then, to configure the gradient well, you might add the following code to `awake
     [gradientWell setTarget:self];
     [gradientWell setAction:@selector(setGradient:)];
 
-To set a gradient value, you would implement the selector action like this:
+To set a gradient value, you would implement the selector action something like this:
 
     - (IBAction) setGradient:(id)sender {
 
         [gradientView setGradient:[sender gradient]];
-        [gradientView display];
     }
 
-Please refer to the example project for more information on how to use XMGradientPanel in your app.
+Please refer to the example project for more detail on how to use XMGradientPanel in your app.
 
 Example Project
 ---------------
