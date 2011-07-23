@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA38654613DAC7D000DB6FA4 /* NSGradient+XMUtilities.h in Sources */ = {isa = PBXBuildFile; fileRef = FA38654413DAC7CF00DB6FA4 /* NSGradient+XMUtilities.h */; };
+		FA38654713DAC7D000DB6FA4 /* NSGradient+XMUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38654513DAC7D000DB6FA4 /* NSGradient+XMUtilities.m */; };
 		FA75293B13BED6460051A48F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA75293A13BED6460051A48F /* Cocoa.framework */; };
 		FA75294513BED6460051A48F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA75294313BED6460051A48F /* InfoPlist.strings */; };
 		FA75294713BED6460051A48F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75294613BED6460051A48F /* main.m */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA38654413DAC7CF00DB6FA4 /* NSGradient+XMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = "NSGradient+XMUtilities.h"; sourceTree = "<group>"; };
+		FA38654513DAC7D000DB6FA4 /* NSGradient+XMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSGradient+XMUtilities.m"; sourceTree = "<group>"; };
 		FA75293613BED6460051A48F /* XMGradientPanel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMGradientPanel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA75293A13BED6460051A48F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FA75293D13BED6460051A48F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -173,6 +177,8 @@
 			children = (
 				FA7529F613BEEDEA0051A48F /* NSGradient+XMGradients.h */,
 				FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */,
+				FA38654413DAC7CF00DB6FA4 /* NSGradient+XMUtilities.h */,
+				FA38654513DAC7D000DB6FA4 /* NSGradient+XMUtilities.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 				FA752A1213BF208E0051A48F /* XMViewControl.m in Sources */,
 				FA752A3513BF299E0051A48F /* XMColorWell.m in Sources */,
 				FA752A4913C05E010051A48F /* XMGradientPickerLinear.m in Sources */,
+				FA38654613DAC7D000DB6FA4 /* NSGradient+XMUtilities.h in Sources */,
+				FA38654713DAC7D000DB6FA4 /* NSGradient+XMUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
