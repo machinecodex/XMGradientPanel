@@ -8,7 +8,7 @@ A drop-in Gradient Panel for Mac apps.
 Introduction
 ----------------
 
-Cocoa has offered the very useful `NSGradient` class since Leopard - but we still have no standard way to present a picker UI so users can select a gradient. Ideally, a gradient picker should work similarly to an `NSColorPanel` to conform to Mac OS X conventions. 
+Cocoa has offered the very useful `NSGradient` class since Leopard - but we until now we have had no standard way to present a picker UI so users can select a gradient. Ideally, a gradient picker should work similarly to an `NSColorPanel` to conform to Mac OS X conventions. 
 
 Our goal is to fill this gap with a standard, open-source set of gradient control views, including a well, a panel and a picker. These controls use target-action based interfaces to pass an `NSGradient` back to your app.
 
