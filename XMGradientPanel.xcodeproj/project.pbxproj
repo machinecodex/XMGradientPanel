@@ -29,8 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA38654413DAC7CF00DB6FA4 /* NSGradient+XMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; name = "NSGradient+XMUtilities.h"; path = "../../XMCoreExtensions/trunk/NSGradient+XMUtilities.h"; sourceTree = "<group>"; };
-		FA38654513DAC7D000DB6FA4 /* NSGradient+XMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; name = "NSGradient+XMUtilities.m"; path = "../../XMCoreExtensions/trunk/NSGradient+XMUtilities.m"; sourceTree = "<group>"; };
+		FA38654413DAC7CF00DB6FA4 /* NSGradient+XMUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; name = "NSGradient+XMUtilities.h"; path = "../XMCoreExtensions/AppKit/NSGradient+XMUtilities.h"; sourceTree = "<group>"; };
+		FA38654513DAC7D000DB6FA4 /* NSGradient+XMUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; name = "NSGradient+XMUtilities.m"; path = "../XMCoreExtensions/AppKit/NSGradient+XMUtilities.m"; sourceTree = "<group>"; };
 		FA75293613BED6460051A48F /* XMGradientPanel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMGradientPanel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA75293A13BED6460051A48F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FA75293D13BED6460051A48F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,8 +50,8 @@
 		FA75295B13BEEB3B0051A48F /* XMGradientWell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientWell.m; sourceTree = "<group>"; };
 		FA75295C13BEEB3B0051A48F /* XMGradientPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGradientPanel.h; sourceTree = "<group>"; };
 		FA75295D13BEEB3B0051A48F /* XMGradientPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientPanel.m; sourceTree = "<group>"; };
-		FA7529F613BEEDEA0051A48F /* NSGradient+XMGradients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSGradient+XMGradients.h"; path = "../../XMCoreExtensions/trunk/NSGradient+XMGradients.h"; sourceTree = "<group>"; };
-		FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */ = {isa = PBXFileReference; fileEncoding = 4; name = "NSGradient+XMGradients.m"; path = "../../XMCoreExtensions/trunk/NSGradient+XMGradients.m"; sourceTree = "<group>"; };
+		FA7529F613BEEDEA0051A48F /* NSGradient+XMGradients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSGradient+XMGradients.h"; path = "../XMCoreExtensions/AppKit/NSGradient+XMGradients.h"; sourceTree = "<group>"; };
+		FA7529F713BEEDEA0051A48F /* NSGradient+XMGradients.m */ = {isa = PBXFileReference; fileEncoding = 4; name = "NSGradient+XMGradients.m"; path = "../XMCoreExtensions/AppKit/NSGradient+XMGradients.m"; sourceTree = "<group>"; };
 		FA7529F913BF00080051A48F /* GradientPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradientPanel.xib; sourceTree = "<group>"; };
 		FA7529FB13BF00A10051A48F /* XMGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGradientView.h; sourceTree = "<group>"; };
 		FA7529FC13BF00A10051A48F /* XMGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGradientView.m; sourceTree = "<group>"; };
