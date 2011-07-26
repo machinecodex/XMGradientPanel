@@ -207,10 +207,10 @@
 
 + (id) codexFloatingWindowTitleGradient {
 	
-	float alpha = 1.0;
+	float alpha = 0.5;
 	
 	CGFloat position1 = 0;
-	float val1 = 0.30;
+	float val1 = 0.20;
 	NSColor * color1 = [NSColor colorWithCalibratedRed:val1 green:val1 blue:val1 alpha:alpha];
 	
 	CGFloat position2 = 11.5/23;
@@ -218,11 +218,11 @@
 	NSColor * color2 = [NSColor colorWithCalibratedRed:val2 green:val2 blue:val2 alpha:alpha];
 	
 	CGFloat position3 = 11.5/23;
-	float val3 = 0.20;
+	float val3 = 0.15;
 	NSColor * color3 = [NSColor colorWithCalibratedRed:val3 green:val3 blue:val3 alpha:alpha];
 	
 	CGFloat position4 = 1;
-	float val4 = 0.22;
+	float val4 = 0.0;
 	NSColor * color4 = [NSColor colorWithCalibratedRed:val4 green:val4 blue:val4 alpha:alpha];
 	
 	id newInstance = [[[self class] alloc] initWithColorsAndLocations: 

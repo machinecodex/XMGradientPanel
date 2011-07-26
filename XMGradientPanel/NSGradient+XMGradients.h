@@ -13,7 +13,6 @@
 
 + (NSGradient *) simpleGradient;
 + (NSGradient *) clearGradient;
-
 + (id) glossyGradient;
 + (id) inverseGlossyGradient;
 + (id) darkGlossyGradient;
@@ -23,7 +22,5 @@
 + (id) spectrumGradient;
 
 + (id) clockDarkGlossyGradient;
-+ (id) codexFloatingWindowTitleGradient;
-+ (id) codexFloatingWindowTitleInactiveGradient;
 
 @end
